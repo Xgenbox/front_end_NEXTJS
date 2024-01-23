@@ -1,16 +1,20 @@
-import Avatar from '@mui/material/Avatar';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
-import * as dropdownData from './data';
-import Link from 'next/link';
-import React from 'react';
+import Avatar from "@mui/material/Avatar";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import Link from "next/link";
+import React from "react";
 
-const AppLinks = () => {
+const AppLinks = ({ dropDownLinks }: any) => {
   return (
-    <Grid container spacing={3} mb={4}>
-      {dropdownData.appsLink.map((links, index) => (
+    <Grid
+      container
+      spacing={3}
+      mb={4}
+      direction={dropDownLinks.length < 4 ? "column" : "row"}
+    >
+      {dropDownLinks.map((links, index) => (
         <Grid item lg={6} key={index}>
           <Link href={links.href} className="hover-text-primary">
             <Stack direction="row" spacing={2}>
@@ -40,7 +44,7 @@ const AppLinks = () => {
                   noWrap
                   className="text-hover"
                   sx={{
-                    width: '240px',
+                    width: "240px",
                   }}
                 >
                   {links.title}
@@ -50,7 +54,7 @@ const AppLinks = () => {
                   variant="subtitle2"
                   fontSize="12px"
                   sx={{
-                    width: '240px',
+                    width: "240px",
                   }}
                   noWrap
                 >
