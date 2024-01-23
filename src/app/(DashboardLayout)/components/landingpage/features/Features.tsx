@@ -1,11 +1,11 @@
 import React from "react";
 import FeaturesTitle from "./FeaturesTitle";
-import Avatar from '@mui/material/Avatar';
-import Box from '@mui/material/Box';
-import CardContent from '@mui/material/CardContent';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
+import Avatar from "@mui/material/Avatar";
+import Box from "@mui/material/Box";
+import CardContent from "@mui/material/CardContent";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 import {
   IconAdjustments,
   IconArchive,
@@ -16,12 +16,13 @@ import {
   IconChartPie,
   IconDatabase,
   IconDiamond,
-  IconLanguageKatakana,
+  IconRibbonHealth,
   IconLayersIntersect,
   IconMessages,
   IconRefresh,
   IconTag,
   IconWand,
+  IconPigMoney,
 } from "@tabler/icons-react";
 import AnimationFadeIn from "../animation/Animation";
 import BlankCard from "../../shared/BlankCard";
@@ -35,105 +36,34 @@ interface FeaturesType {
 
 const featuresData: FeaturesType[] = [
   {
-    icon: <IconWand width={30} height={30} strokeWidth={1.5} />,
-    color: 'primary',
-    title: "6 Theme Colors",
-    subtext: "We have included 6 pre-defined Theme Colors with Elegant Admin.",
-  },
-  {
-    icon: <IconArchive width={30} height={30} strokeWidth={1.5} />,
-    color: "secondary",
-    title: "65+ Page Templates",
-    subtext: "Yes, we have 4 demos & 65+ Pages per demo to make it easier.",
-  },
-  {
-    icon: <IconAdjustments width={30} height={30} strokeWidth={1.5} />,
-    color: "warning",
-    title: "45+ UI Components",
-    subtext: "Almost 45+ UI Components being given with Spike Admin Pack.",
-  },
-  {
-    icon: <IconTag width={30} height={30} strokeWidth={1.5} />,
-    color: "error",
-    title: "Material Ui",
-    subtext: "Its been made with Material Ui and full responsive layout.",
-  },
-  {
-    icon: <IconDiamond width={30} height={30} strokeWidth={1.5} />,
-    color: "success",
-    title: "3400+ Font Icons",
-    subtext:
-      "Lots of Icon Fonts are included here in the package of Spike Admin.",
-  },
-  {
-    icon: <IconDatabase width={30} height={30} strokeWidth={1.5} />,
+    icon: <IconPigMoney width={30} height={30} strokeWidth={1.5} />,
     color: "primary",
-    title: "Axios",
-    subtext:
-      "Axios is a promise-based HTTP Client for node.js and the browser.",
-  },
-  {
-    icon: <IconLanguageKatakana width={30} height={30} strokeWidth={1.5} />,
-    color: "secondary",
-    title: "i18 React",
-    subtext:
-      "react-i18 is a powerful internationalization framework for React.",
-  },
-  {
-    icon: <IconBuildingCarousel width={30} height={30} strokeWidth={1.5} />,
-    color: "warning",
-    title: "Slick Carousel",
-    subtext: "The Last React Carousel You will Ever Need!",
+    title: "Cost Reduction",
+    subtext: "Maximizing Savings, Minimizing Expenses.",
   },
   {
     icon: <IconArrowsShuffle width={30} height={30} strokeWidth={1.5} />,
-    color: "error",
-    title: "Easy to Customize",
-    subtext: "Customization will be easy as we understand your pain.",
+    color: "warning",
+    title: "Dynamic Routing",
+    subtext: "Streamlining Paths: The Power of Adaptive Navigation.",
   },
   {
-    icon: <IconChartPie width={30} height={30} strokeWidth={1.5} />,
+    icon: <IconRibbonHealth width={30} height={30} strokeWidth={1.5} />,
     color: "success",
-    title: "Lots of Chart Options",
-    subtext: "You name it and we have it, Yes lots of variations for Charts.",
-  },
-  {
-    icon: <IconCalendar width={30} height={30} strokeWidth={1.5} />,
-    color: "primary",
-    title: "Calendar Design",
-    subtext: "Calendar is available with our package & in nice design.",
-  },
-  {
-    icon: <IconMessages width={30} height={30} strokeWidth={1.5} />,
-    color: "error",
-    title: "Dedicated Support",
-    subtext: "We believe in supreme support is key and we offer that.",
-  },
-  {
-    icon: <IconLayersIntersect width={30} height={30} strokeWidth={1.5} />,
-    color: "primary",
-    title: "Lots of Table Examples",
-    subtext: "Data Tables are initial requirement and we added.",
+    title: "CO2 Reduction",
+    subtext: "Towards a Greener Future: Cutting Carbon Emissions.",
   },
   {
     icon: <IconRefresh width={30} height={30} strokeWidth={1.5} />,
-    color: "secondary",
-    title: "Regular Updates",
-    subtext: "We are constantly updating our pack with new features.",
+    color: "error",
+    title: "Improved Cleanlines",
+    subtext: "Enhancing Hygiene and Neatness.",
   },
-  {
-    icon: <IconBook width={30} height={30} strokeWidth={1.5} />,
-    color: "warning",
-    title: "Detailed Documentation",
-    subtext: "We have made detailed documentation, that's easy.",
-  },
-  
-  
 ];
 
 const Features = () => {
   return (
-    <Box py={12}>
+    <Box py={12} id="features">
       <Container maxWidth="lg">
         <FeaturesTitle />
         <AnimationFadeIn>
@@ -148,7 +78,8 @@ const Features = () => {
                           bgcolor: `${feature.color}` + ".light",
                           color: `${feature.color}` + ".main",
                           width: 50,
-                          height: 50, borderRadius: "18px"
+                          height: 50,
+                          borderRadius: "18px",
                         }}
                       >
                         {feature.icon}
@@ -170,6 +101,19 @@ const Features = () => {
             </Grid>
           </Box>
         </AnimationFadeIn>
+        <div className="relative top-12 mb-12">
+          <Typography
+            fontSize="18px"
+            fontWeight={500}
+            textAlign="center"
+            mb={1}
+          >
+            Our solution significantly reduces the frequency of waste
+            collection, which allows you to save on fuel, labor, and fleet
+            maintenance costs. Together, our products can reduce your operating
+            costs by up to 80%.
+          </Typography>
+        </div>
       </Container>
     </Box>
   );

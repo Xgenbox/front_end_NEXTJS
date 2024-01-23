@@ -18,7 +18,7 @@ const FeaturesTitle = () => {
                         lg: '43px',
                         xs: '30px'
                     }
-                }}>Other Amazing Features & Flexibility Provided</Typography>
+                }}>Features</Typography>
             </Grid>
         </Grid>
     );

@@ -90,7 +90,7 @@ const Navigations = () => {
             sx={{
               position: "absolute",
               left: "0",
-              right: "0",
+              right: "350px",
               top: "55px",
               width: ProductsAppsLink.length < 4 ? "350px" : "850px",
               margin: "0 auto",
@@ -175,7 +175,7 @@ const Navigations = () => {
             onMouseLeave={handleCloseCompany}
             sx={{
               position: "absolute",
-              left: "0",
+              left: "100px",
               right: "0",
               top: "55px",
               width: CompanyAppsLink.length < 4 ? "350px" : "650px",
@@ -218,7 +218,7 @@ const Navigations = () => {
             onMouseLeave={handleCloseContact}
             sx={{
               position: "absolute",
-              left: "230px",
+              left: "400px",
               right: "0",
               top: "55px",
               width: ContactAppsLink.length < 4 ? "350px" : "650px",

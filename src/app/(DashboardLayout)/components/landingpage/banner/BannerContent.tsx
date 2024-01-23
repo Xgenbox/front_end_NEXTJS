@@ -32,12 +32,11 @@ const BannerContent = () => {
             },
           }}
         >
-          Revolutionize your development with Powerful Material UI dashboard
+Stop wasting money on inefficient waste collection
         </Typography>
         <Stack direction="row" alignItems="center" justifyContent="center">
           <Typography variant="h5" fontWeight={500} textAlign="center">
-            Spike comes with light & dark color skins, well designed dashboards,
-            applications and pages
+          Optimize Your Resources: Smarter Solutions for Waste Management
           </Typography>
         </Stack>
       </Stack>
@@ -47,12 +46,6 @@ const BannerContent = () => {
         alignItems="center"
         justifyContent="center"
       >
-        <StyledButton href="/" variant="contained" color="primary" size="large">
-          Live Preview
-        </StyledButton>
-        <StyledButton href="/" variant="outlined" color="primary" size="large">
-          Documentation
-        </StyledButton>
       </Stack>
 
       

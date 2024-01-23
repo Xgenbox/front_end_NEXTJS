@@ -1,7 +1,8 @@
 import React from "react";
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
-import bannerbgImg1 from "public/images/landingpage/slider-group.png";
+import bannerbgImg1 from "public/images/landingpage/slider/bin.png";
+
 import Image from "next/image";
 
 const BannerSlider = () => {
@@ -10,15 +11,18 @@ const BannerSlider = () => {
       sx={{
         overflow: "hidden",
         position: "relative",
-        paddingTop: 10,
+        paddingTop: 2,
         paddingBottom: 10,
+
       }}
     >
       <Box
         sx={{
           display: "flex",
           flexDirection: "row",
-          width: "100%",
+          width: "110%",
+          position: "relative",
+          left:40,
         }}
       >
         <Box

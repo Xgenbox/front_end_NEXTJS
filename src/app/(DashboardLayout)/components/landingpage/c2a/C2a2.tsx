@@ -84,7 +84,7 @@ const C2a2 = () => {
                 }}
               >
                 {/* <Avatar src="/images/landingpage/icon-certificate.svg" /> */}
-                Connect with us either on discord or email us
+                Connect with us
               </Typography>
 
               <Stack direction={{ xs: "column", sm: "row" }} spacing={3} mt={3}>
@@ -92,18 +92,10 @@ const C2a2 = () => {
                   variant="contained"
                   color="primary"
                   size="large"
-                  href="https://discord.com/invite/eMzE8F6Wqs"
                 >
-                  Ask on Discord
+                  Contact Us
                 </StyledButton>
-                <StyledButton
-                  variant="outlined"
-                  color="primary"
-                  size="large"
-                  href="https://support.wrappixel.com/"
-                >
-                  Submit Ticket
-                </StyledButton>
+
               </Stack>
             </Grid>
             {lgUp ? (

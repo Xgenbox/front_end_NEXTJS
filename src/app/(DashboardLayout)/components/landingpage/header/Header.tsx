@@ -1,19 +1,20 @@
 import React from "react";
-import AppBar from '@mui/material/AppBar';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import Stack from '@mui/material/Stack';
-import { Theme } from '@mui/material/styles';
-import Toolbar from '@mui/material/Toolbar';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { styled } from '@mui/material/styles';
+import AppBar from "@mui/material/AppBar";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
+import Stack from "@mui/material/Stack";
+import { Theme } from "@mui/material/styles";
+import Toolbar from "@mui/material/Toolbar";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { styled } from "@mui/material/styles";
 import Logo from "@/app/(DashboardLayout)/layout/shared/logo/Logo";
 import Navigations from "./Navigations";
 import MobileSidebar from "./MobileSidebar";
 import { IconMenu2 } from "@tabler/icons-react";
-
+import LoginTwoToneIcon from '@mui/icons-material/LoginTwoTone';
+import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
 const LpHeader = () => {
   const AppBarStyled = styled(AppBar)(({ theme }) => ({
     justifyContent: "center",
@@ -83,13 +84,22 @@ const LpHeader = () => {
               <Stack spacing={1} direction="row" alignItems="center" gap={1}>
                 <Navigations />
               </Stack>
-              <Button
-                color="primary"
-                variant="contained"
-                href="https://discord.com/invite/eMzE8F6Wqs"
-              >
-                Live Help
-              </Button>
+              <Stack direction="row" alignItems="center" gap={1}>
+                <Button
+                  color="primary"
+                  variant="contained"
+                  startIcon={<LoginTwoToneIcon/>}
+                >
+                  Login
+                </Button>
+                <Button
+                  color="primary"
+                  variant="outlined"
+                  startIcon={<AccountCircleTwoToneIcon/>}
+                >
+                  Register
+                </Button>
+              </Stack>
             </>
           ) : null}
         </ToolbarStyled>
