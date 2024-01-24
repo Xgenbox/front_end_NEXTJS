@@ -15,8 +15,8 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitAny":false, 
-    "jsx": "preserve", 
+    "noImplicitAny":false,
+    "jsx": "preserve",
     "incremental": true,
     "plugins": [
       {
@@ -28,6 +28,6 @@
       "react": [ "./node_modules/@types/react" ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/store/apps/partnershipSlice"],
   "exclude": ["node_modules"]
 }
