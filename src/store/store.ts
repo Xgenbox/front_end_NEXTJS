@@ -13,6 +13,11 @@ import ContactsReducer from "./apps/contacts/ContactSlice";
 import UserProfileReducer from "./apps/userProfile/UserProfileSlice";
 import UserProfile2Reducer from "./apps/userProfile/UserProfileSlice2";
 import BlogReducer from "./apps/blog/BlogSlice";
+import UserReducer from "./apps/user/UserSlice";
+import appointmentReducer from "./apps/appointment/AppointmentSlice";
+// import UserReducer from "./apps/auth/UserSlice";
+// import UserSlice from './auth/UserSlice';
+import appointmentSlice from './apps/appointment/AppointmentSlice';
 
 export const store = configureStore({
   reducer: {
@@ -28,6 +33,10 @@ export const store = configureStore({
     userpostsReducer: UserProfileReducer,
     userpostsReducer2: UserProfile2Reducer,
     blogReducer: BlogReducer,
+    user: UserReducer,
+    appointment : appointmentReducer
+    // user: UserReducer,
+
   },
   devTools: process.env.NODE_ENV !== "production",
 });
@@ -45,6 +54,8 @@ const rootReducer = combineReducers({
   userpostsReducer: UserProfileReducer,
   userpostsReducer2: UserProfile2Reducer,
   blogReducer: BlogReducer,
+  user: UserReducer,
+  appointment : appointmentReducer
 });
 
 export type RootState = ReturnType<typeof store.getState>;
