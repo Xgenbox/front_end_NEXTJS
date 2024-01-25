@@ -52,7 +52,7 @@ const TopCards = () => {
 
   return (
     <Box
-      px="150px"
+      px={{lg:"150px",xs:"50px"}}
       overflow="hidden"
       borderRadius="0"
       sx={{
@@ -65,6 +65,8 @@ const TopCards = () => {
     >
         <AnimationFadeIn>
             <>
+            <Typography fontSize="18px" fontWeight={500} textAlign="center" mb={1}>Exploring Diverse Features and Capabilities</Typography>
+
       <Typography
         variant="h2"
         fontWeight={700}

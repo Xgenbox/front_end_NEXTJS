@@ -12,6 +12,9 @@ import Features from "@/app/(DashboardLayout)/components/landingpage/features/Fe
 import C2a2 from "@/app/(DashboardLayout)/components/landingpage/c2a/C2a2";
 import Footer from "@/app/(DashboardLayout)/components/landingpage/footer/Footer";
 import TopCards from "../(DashboardLayout)/components/landingpage/topCards/TopCards";
+import Questions from "../(DashboardLayout)/components/landingpage/questions/Questions";
+import Solutions from "../(DashboardLayout)/components/landingpage/solutions/Solutions";
+import About from "../(DashboardLayout)/components/landingpage/about/About";
 
 export default function Landingpage() {
   return (
@@ -19,9 +22,10 @@ export default function Landingpage() {
       <LpHeader />
       <Banner />
       <TopCards />
-      <DemosApps />
+      <About/>
       <Features />
-      <Testimonial />
+      <Solutions/>
+      <Questions/>
       <C2a2 />
       <Footer />
     </PageContainer>
