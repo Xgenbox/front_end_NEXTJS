@@ -31,6 +31,7 @@ const C2a2 = () => {
           lg: "80px"
         }
       }}
+      pt={4}
     >
       <Container maxWidth="lg">
         <Box
@@ -83,9 +84,10 @@ const C2a2 = () => {
                       : (theme) => theme.palette.background.paper,
                 }}
               >
-                {/* <Avatar src="/images/landingpage/icon-certificate.svg" /> */}
-                Connect with us
-              </Typography>
+                <Avatar src="/images/landingpage/icon-certificate.svg" /> 
+                Contact us today to find out how our solution will reduce your waste collection costs
+
+</Typography>
 
               <Stack direction={{ xs: "column", sm: "row" }} spacing={3} mt={3}>
                 <StyledButton

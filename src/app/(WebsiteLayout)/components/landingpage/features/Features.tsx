@@ -7,21 +7,13 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import {
-  IconAdjustments,
-  IconArchive,
+
   IconArrowsShuffle,
-  IconBook,
-  IconBuildingCarousel,
-  IconCalendar,
-  IconChartPie,
-  IconDatabase,
-  IconDiamond,
+
   IconRibbonHealth,
-  IconLayersIntersect,
-  IconMessages,
+
   IconRefresh,
-  IconTag,
-  IconWand,
+
   IconPigMoney,
 } from "@tabler/icons-react";
 import AnimationFadeIn from "../animation/Animation";

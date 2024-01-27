@@ -4,6 +4,11 @@ interface appsLinkType {
   subtext: string;
   avatar: string;
 }
+interface chipType {
+  title: string;
+  subtext: string;
+  icon: string;
+}
 
 const ProductsAppsLink: appsLinkType[] = [
   // {
@@ -116,4 +121,70 @@ const ContactAppsLink: appsLinkType[] = [
     avatar: "/images/icons8/technical-assistance.png",
   },
 ];
-export { ProductsAppsLink, MarketsAppsLink, CompanyAppsLink, ContactAppsLink };
+
+const SmartBoxChipsData1: chipType[] = [
+  {
+    title: "Powered by solar energy",
+    subtext:
+      " Eco-friendly and sustainable, harnessing solar energy for efficient power generation.",
+    icon: "heroicons:sun",
+  },
+  {
+    title: "Wireless data transmission",
+    subtext:
+      "Wireless data transmission involves sending information over distances without physical connections or wires.",
+    icon: "heroicons:chart-bar",
+  },
+  {
+    title: "Safety sensorsSafety sensors",
+    subtext:
+      "Safety sensors are devices designed to detect hazards and prevent accidents in various environments.",
+    icon: "heroicons:lock-closed",
+  },
+  {
+    title: "GPS location tracking",
+    subtext:
+      "GPS location tracking enables real-time monitoring and positioning of objects or individuals globally.",
+    icon: "heroicons:map",
+  },
+];
+const SmartBoxChipsData2: chipType[] = [
+  {
+    title: "Graphic wraps",
+    subtext:
+      "Graphic wraps are customizable, visually striking vinyl coverings applied to vehicles or surfaces for advertising or aesthetic purposes.",
+    icon: "heroicons:printer",
+  },
+  {
+    title: "Advertisement signage",
+    subtext:
+      "Advertisement signage: visually impactful displays for promoting brands, products, or services.",
+    icon: "heroicons:photo",
+  },
+  {
+    title: "WI-FI router",
+    subtext:
+      "A Wi-Fi router is a device that provides wireless internet connectivity to various devices within a network.",
+    icon: "heroicons:wifi",
+  },
+  {
+    title: "mounting bracket",
+    subtext:
+      "A mounting bracket is a hardware device used to attach objects securely to a surface or structure.",
+    icon: "heroicons:wrench-screwdriver",
+  },
+  {
+    title: "Ashtray ",
+    subtext:
+      "An ashtray is a receptacle for ash and cigarette butts, typically used by smokers.",
+    icon: "mdi:smoking",
+  },
+];
+export {
+  ProductsAppsLink,
+  MarketsAppsLink,
+  CompanyAppsLink,
+  ContactAppsLink,
+  SmartBoxChipsData1,
+  SmartBoxChipsData2,
+};

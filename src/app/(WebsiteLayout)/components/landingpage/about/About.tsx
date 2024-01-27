@@ -6,7 +6,6 @@ import ReactPlayer from "react-player/youtube";
 import Image from "next/image";
 import Card from "@mui/material/Card";
 import AnimateFadeIn from "../animation/Animation";
-import { padding } from "@mui/system";
 const About = () => {
   return (
     <Box
