@@ -8,7 +8,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import BlankCard from "../../shared/BlankCard";
-import AnimationFadeIn from "../animation/Animation";
+import AnimationFadeIn from "../../shared/animation/Animation";
 
 const ImgCard = styled(BlankCard)(() => ({
   backgroundImage: `url('/images/landingpage/shape/line-bg.svg')`,

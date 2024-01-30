@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/system";
 import { IconChevronDown } from "@tabler/icons-react";
-import AnimateFadeIn from "../animation/Animation";
+import AnimateFadeIn from "../../shared/animation/Animation";
 const Questions = () => {
   interface faq {
     question: string;

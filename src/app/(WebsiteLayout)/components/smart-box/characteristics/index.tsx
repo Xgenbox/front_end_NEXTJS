@@ -9,7 +9,6 @@ import TableRow from "@mui/material/TableRow";
 import Paper  from "@mui/material/Paper";
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import AnimateFadeIn from "../../landingpage/animation/Animation";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -43,8 +42,8 @@ export default function SmartBoxCharacteristics() {
       }}
       mt={-4}
     >
-      <AnimateFadeIn>
-        <>
+      
+        
           <Typography
             variant="h2"
             fontWeight={700}
@@ -64,8 +63,7 @@ export default function SmartBoxCharacteristics() {
           >
             Characteristics
           </Typography>
-        </>
-      </AnimateFadeIn>
+      
       <TableContainer component={Paper} >
         <Table  aria-label="customized table">
           <TableHead>

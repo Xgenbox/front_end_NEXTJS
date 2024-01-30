@@ -7,7 +7,7 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/system";
-import AnimateFadeIn from "../animation/Animation";
+import AnimateFadeIn from "../../shared/animation/Animation";
 import { Icon } from "@iconify/react";
 import { useMediaQuery } from "react-responsive";
 

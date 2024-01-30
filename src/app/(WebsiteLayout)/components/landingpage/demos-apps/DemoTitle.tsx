@@ -4,7 +4,7 @@ import AvatarGroup from '@mui/material/AvatarGroup';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import AnimationFadeIn from '../animation/Animation';
+import AnimationFadeIn from '../../shared/animation/Animation';
 
 const DemoTitle = () => {
   return (

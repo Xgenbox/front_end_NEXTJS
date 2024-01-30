@@ -15,6 +15,7 @@ import MobileSidebar from "./MobileSidebar";
 import { IconMenu2 } from "@tabler/icons-react";
 import LoginTwoToneIcon from '@mui/icons-material/LoginTwoTone';
 import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
+import Link from "next/link";
 const LpHeader = () => {
   const AppBarStyled = styled(AppBar)(({ theme }) => ({
     justifyContent: "center",
@@ -69,7 +70,9 @@ const LpHeader = () => {
     <AppBarStyled position="sticky" elevation={0}>
       <Container maxWidth="lg">
         <ToolbarStyled>
+          <Link href="/">
           <Logo />
+          </Link>
           {lgDown ? (
             <IconButton
               color="inherit"

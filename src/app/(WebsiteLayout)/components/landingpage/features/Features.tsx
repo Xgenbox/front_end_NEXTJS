@@ -16,7 +16,7 @@ import {
 
   IconPigMoney,
 } from "@tabler/icons-react";
-import AnimationFadeIn from "../animation/Animation";
+import AnimationFadeIn from "../../shared/animation/Animation";
 import BlankCard from "../../shared/BlankCard";
 
 interface FeaturesType {

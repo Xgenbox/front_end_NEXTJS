@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 import ReactPlayer from "react-player/youtube";
 import Image from "next/image";
 import Card from "@mui/material/Card";
-import AnimateFadeIn from "../animation/Animation";
+import AnimateFadeIn from "../../shared/animation/Animation";
 const About = () => {
   return (
     <Box

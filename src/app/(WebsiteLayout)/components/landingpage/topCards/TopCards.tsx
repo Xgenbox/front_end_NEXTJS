@@ -10,7 +10,7 @@ import Image from "next/image";
 import { Icon } from "@iconify/react";
 import { Button } from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import AnimationFadeIn from "../animation/Animation";
+import AnimationFadeIn from "../../shared/animation/Animation";
 
 const TopCards = () => {
   const customizer = useSelector((state: AppState) => state.customizer);
