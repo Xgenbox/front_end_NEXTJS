@@ -67,19 +67,19 @@ const CompanyAppsLink: appsLinkType[] = [
 ];
 const ContactAppsLink: appsLinkType[] = [
   {
-    href: "#",
+    href: "/contact-details",
     title: "Contact Details",
     subtext: "Discover more details here",
     avatar: "/images/svgs/icon-dd-chat.svg",
   },
   {
-    href: "#",
+    href: "/quote-request",
     title: "Quote Request",
     subtext: "Discover more details here",
     avatar: "/images/icons8/quote.png",
   },
   {
-    href: "#",
+    href: "/technical-assistance",
     title: "Technical Assistance",
     subtext: "Discover more details here",
     avatar: "/images/icons8/technical-assistance.png",
@@ -330,6 +330,58 @@ const WasteCollectorsChipData: chipType[] = [
     icon: "mdi:human",
   },
 ];
+const ContactDetailsChipData: chipType[] = [
+  {
+    title: "Address",
+    subtext:
+      "Z4, Saint Gobain, Jbel Jloud",
+    icon: "heroicons:map-pin",
+  },
+  {
+    title: "Phone",
+    subtext:"+216 56 332 666",
+    icon: "heroicons:phone",
+  },
+  {
+    title: "Email",
+    subtext:
+      "direction@xgenbox.com",
+    icon: "heroicons:envelope",
+  },
+
+];
+const QuoteRequestChipsData: chipType[] = [
+  {
+    title: "Graphic wraps",
+    subtext:
+      "Graphic wraps are customizable, visually striking vinyl coverings applied to vehicles or surfaces for advertising or aesthetic purposes.",
+    icon: "heroicons:printer",
+  },
+  {
+    title: "Advertisement signage",
+    subtext:
+      "Advertisement signage: visually impactful displays for promoting brands, products, or services.",
+    icon: "heroicons:photo",
+  },
+  {
+    title: "WI-FI router",
+    subtext:
+      "A Wi-Fi router is a device that provides wireless internet connectivity to various devices within a network.",
+    icon: "heroicons:wifi",
+  },
+  {
+    title: "mounting bracket",
+    subtext:
+      "A mounting bracket is a hardware device used to attach objects securely to a surface or structure.",
+    icon: "heroicons:wrench-screwdriver",
+  },
+  {
+    title: "Ashtray ",
+    subtext:
+      "An ashtray is a receptacle for ash and cigarette butts, typically used by smokers.",
+    icon: "mdi:smoking",
+  },
+];
 
 export {
   ProductsAppsLink,
@@ -345,5 +397,7 @@ export {
   CommercialEstablishmentsChipData,
   CommercialEstablishmentsCards,
   PrivateOrganizationsCards,
-  WasteCollectorsChipData
+  WasteCollectorsChipData,
+  ContactDetailsChipData,
+  QuoteRequestChipsData
 };

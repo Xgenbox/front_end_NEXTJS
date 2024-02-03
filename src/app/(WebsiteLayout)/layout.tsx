@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import RTL from "@/app/(DashboardLayout)/layout/shared/customizer/RTL";
@@ -8,8 +8,6 @@ import { store } from "@/store/store";
 import { useSelector } from "@/store/hooks";
 import { AppState } from "@/store/store";
 import { Provider } from "react-redux";
-
-
 
 // import NextNProgress from "nextjs-progressbar";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -20,23 +18,29 @@ import { NextAppDirEmotionCacheProvider } from "@/utils/theme/EmotionCache";
 import "react-quill/dist/quill.snow.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../global.css"
-
+import "../global.css";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
+import { useDispatch } from "@/store/hooks";
+import { refreshAuthentication } from "@/utils/methods/auth";
 export const MyApp = ({ children }: { children: React.ReactNode }) => {
   const theme = ThemeSettings();
-
   const customizer = useSelector((state: AppState) => state.customizer);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    refreshAuthentication(dispatch);
+  }, []);
 
   return (
     <>
-      <NextAppDirEmotionCacheProvider options={{ key: 'modernize' }}>
-      <ThemeProvider theme={theme}>
-        <RTL direction={customizer.activeDir}>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <CssBaseline />
-          {children}
-        </RTL>
-      </ThemeProvider>
+      <NextAppDirEmotionCacheProvider options={{ key: "modernize" }}>
+        <ThemeProvider theme={theme}>
+          <RTL direction={customizer.activeDir}>
+            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+            <CssBaseline />
+            {children}
+          </RTL>
+        </ThemeProvider>
       </NextAppDirEmotionCacheProvider>
     </>
   );
@@ -54,6 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
+        <ToastContainer />
         <Provider store={store}>
           {loading ? (
             // eslint-disable-next-line react/no-children-prop

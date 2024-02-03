@@ -43,6 +43,8 @@ const BpCheckedIcon = styled(BpIcon)(({ theme }) => ({
 
 // Inspired by blueprintjs
 function CustomRadio(props: RadioProps) {
+  console.log(props);
+
   return (
     <Radio
       disableRipple

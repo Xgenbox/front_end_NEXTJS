@@ -1,10 +1,10 @@
 "use client"
 import React from "react";
 import PageLayout from "../../layout/layout";
-import Chips from "../../components/shared/chips";
-import CommercialEstablishmentsHero from "../../components/commercial-establishments/hero";
+import Chips from "../../components/shared/pages/chips";
+import CommercialEstablishmentsHero from "../../components/pages/commercial-establishments/hero";
 import { CommercialEstablishmentsCards, CommercialEstablishmentsChipData } from "../../constant/data";
-import Cards from "../../components/shared/cards";
+import Cards from "../../components/shared/pages/cards";
 
 const CommercialEstablishments = () => {
   return (

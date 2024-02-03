@@ -3,8 +3,8 @@ import React from "react";
 import PageLayout from "../../layout/layout";
 
 import { PrivateOrganizationsCards } from "../../constant/data";
-import Cards from "../../components/shared/cards";
-import PrivateOrganizationsHero from "../../components/private-organizations/hero";
+import Cards from "../../components/shared/pages/cards";
+import PrivateOrganizationsHero from "../../components/pages/private-organizations/hero";
 
 const PrivateOrganizations = () => {
   return (

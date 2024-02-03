@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import PageLayout from "../../layout/layout";
-import PartnershipOpportunitiesForm from "../../components/partnership-opportunities/form";
-import PartnershipOpportunitiesQuestions from "../../components/partnership-opportunities/questions";
+import PartnershipOpportunitiesForm from "../../components/pages/partnership-opportunities/form";
+import PartnershipOpportunitiesQuestions from "../../components/pages/partnership-opportunities/questions";
 import { Box } from "@mui/material";
 
 const PartnershipOpportunities = () => {
