@@ -2,15 +2,14 @@
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { styled, useTheme } from '@mui/material/styles';
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Header from "./layout/vertical/header/Header";
 import Sidebar from "./layout/vertical/sidebar/Sidebar";
 import Customizer from "./layout/shared/customizer/Customizer";
 import Navigation from "./layout/horizontal/navbar/Navigation";
 import HorizontalHeader from "./layout/horizontal/header/Header";
-import { useDispatch, useSelector } from "@/store/hooks";
+import { useSelector } from "@/store/hooks";
 import { AppState } from "@/store/store";
-import { refreshAuthentication } from '@/utils/methods/auth';
 
 
 
@@ -46,10 +45,6 @@ export default function RootLayout({
     //   theme.palette.mode === "dark" ? "#212946" : theme.palette.grey[200]
   }));
 
-  const dispatch = useDispatch();
-  useEffect(() => {
-    refreshAuthentication(dispatch);
-  }, [])
   return (
     <MainWrapper>
        <title>Spike NextJs 14.0.3</title>

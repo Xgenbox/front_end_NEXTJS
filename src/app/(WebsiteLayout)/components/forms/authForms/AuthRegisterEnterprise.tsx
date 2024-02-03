@@ -2,8 +2,8 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
-import CustomTextField from "@/app/(DashboardLayout)/components/forms/theme-elements/CustomTextField";
-import CustomFormLabel from "@/app/(DashboardLayout)/components/forms/theme-elements/CustomFormLabel";
+import CustomTextField from "@/app/(WebsiteLayout)/components/forms/theme-elements/CustomTextField";
+import CustomFormLabel from "@/app/(WebsiteLayout)/components/forms/theme-elements/CustomFormLabel";
 import { registerType } from "@/app/(WebsiteLayout)/types/auth/auth";
 import AuthSocialButtons from "./AuthSocialButtons";
 import CustomSelect from "../theme-elements/CustomSelect";
@@ -254,7 +254,7 @@ const AuthRegisterEnterprise = ({ title, subtitle, subtext }: registerType) => {
             type="submit"
             disabled={isLoading}
           >
-            {isLoading?<CircularProgress/>:"Sign Up"}
+            {isLoading ? <CircularProgress /> : "Sign Up"}
           </Button>
         </form>
       </Box>

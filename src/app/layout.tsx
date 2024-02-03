@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import RTL from "@/app/(DashboardLayout)/layout/shared/customizer/RTL";
+import RTL from "@/app/(UserDashboardLayout)/layout/shared/customizer/RTL";
 import { ThemeSettings } from "@/utils/theme/Theme";
 import { store } from "@/store/store";
 import { useSelector } from "@/store/hooks";
@@ -18,7 +18,7 @@ import { NextAppDirEmotionCacheProvider } from "@/utils/theme/EmotionCache";
 import "react-quill/dist/quill.snow.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../global.css";
+import "./global.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { useDispatch } from "@/store/hooks";

@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
 import { IconChevronDown } from "@tabler/icons-react";
-import AppLinks from "@/app/(DashboardLayout)/layout/vertical/header/AppLinks";
+import AppLinks from "@/app/(WebsiteLayout)/layout/vertical/header/AppLinks";
 
 import { ProductsAppsLink,MarketsAppsLink,CompanyAppsLink,ContactAppsLink } from "@/app/(WebsiteLayout)/constant/data";
 const Navigations = () => {

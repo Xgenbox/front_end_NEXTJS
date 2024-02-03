@@ -1,13 +1,13 @@
 "use client";
 
 import React from "react";
-import PageLayout from "./layout/layout";
-import Banner from "./components/pages/landingpage/banner/Banner";
-import TopCards from "./components/pages/landingpage/topCards/TopCards";
-import About from "./components/pages/landingpage/about/About";
-import Features from "./components/pages/landingpage/features/Features";
-import Solutions from "./components/pages/landingpage/solutions/Solutions";
-import Questions from "./components/pages/landingpage/questions/Questions";
+import PageLayout from "./(WebsiteLayout)/layout/layout";
+import Banner from "./(WebsiteLayout)/components/pages/landingpage/banner/Banner";
+import TopCards from "./(WebsiteLayout)/components/pages/landingpage/topCards/TopCards";
+import About from "./(WebsiteLayout)/components/pages/landingpage/about/About";
+import Features from "./(WebsiteLayout)/components/pages/landingpage/features/Features";
+import Solutions from "./(WebsiteLayout)/components/pages/landingpage/solutions/Solutions";
+import Questions from "./(WebsiteLayout)/components/pages/landingpage/questions/Questions";
 
 // components
 

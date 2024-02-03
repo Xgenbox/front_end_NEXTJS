@@ -1,9 +1,8 @@
-import CustomSocialButton from "@/app/(DashboardLayout)/components/forms/theme-elements/CustomSocialButton";
-import Avatar from '@mui/material/Avatar';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import { signInType } from "@/app/(DashboardLayout)/types/auth/auth";
-
+import CustomSocialButton from "@/app/(WebsiteLayout)/components/forms/theme-elements/CustomSocialButton";
+import Avatar from "@mui/material/Avatar";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import { signInType } from "@/app/(WebsiteLayout)/types/auth/auth";
 const AuthSocialButtons = ({ title }: signInType) => (
   <>
     <Grid container spacing={3} sx={{ mt: 3 }}>
@@ -31,7 +30,6 @@ const AuthSocialButtons = ({ title }: signInType) => (
           Google
         </CustomSocialButton>
       </Grid>
-
     </Grid>
   </>
 );
