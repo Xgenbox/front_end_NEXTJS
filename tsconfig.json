@@ -25,6 +25,9 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
+      "@services/*": ["./_services/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@store/*": ["./src/store/*"],
       "react": [ "./node_modules/@types/react" ]
     }
   },

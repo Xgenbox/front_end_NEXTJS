@@ -13,7 +13,7 @@ import CustomFormLabel from "@/app/(WebsiteLayout)/components/forms/theme-elemen
 import AuthSocialButtons from "./AuthSocialButtons";
 import * as yup from "yup";
 import { useFormik } from "formik";
-import { AuthService } from "../../../../../../_services/auth.service";
+import { AuthService } from "@services/auth.service";
 import { CircularProgress } from "@mui/material";
 import { useState } from "react";
 import { useDispatch } from "@/store/hooks";

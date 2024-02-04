@@ -2,7 +2,6 @@
 import React, { useEffect } from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import RTL from "@/app/(UserDashboardLayout)/layout/shared/customizer/RTL";
 import { ThemeSettings } from "@/utils/theme/Theme";
 import { store } from "@/store/store";
 import { useSelector } from "@/store/hooks";
@@ -12,7 +11,6 @@ import { Provider } from "react-redux";
 // import NextNProgress from "nextjs-progressbar";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
-import "@/app/api/index";
 import "@/utils/i18n";
 import { NextAppDirEmotionCacheProvider } from "@/utils/theme/EmotionCache";
 import "react-quill/dist/quill.snow.css";
@@ -35,11 +33,9 @@ export const MyApp = ({ children }: { children: React.ReactNode }) => {
     <>
       <NextAppDirEmotionCacheProvider options={{ key: "modernize" }}>
         <ThemeProvider theme={theme}>
-          <RTL direction={customizer.activeDir}>
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
             {children}
-          </RTL>
         </ThemeProvider>
       </NextAppDirEmotionCacheProvider>
     </>
