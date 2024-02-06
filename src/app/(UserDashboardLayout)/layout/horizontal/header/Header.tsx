@@ -70,12 +70,12 @@ export default function Header() {
         <Box flexGrow={1} />
         <Stack spacing={1} direction="row" alignItems="center">
 
-          <Language />
+          {/* <Language /> */}
 
           {/* ------------------------------------------- */}
           {/* End Ecommerce Dropdown */}
           {/* ------------------------------------------- */}
-          <Notifications />
+          {/* <Notifications /> */}
           <Profile />
         </Stack>
       </ToolbarStyled>

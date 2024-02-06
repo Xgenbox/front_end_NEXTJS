@@ -33,9 +33,9 @@ export const MyApp = ({ children }: { children: React.ReactNode }) => {
     <>
       <NextAppDirEmotionCacheProvider options={{ key: "modernize" }}>
         <ThemeProvider theme={theme}>
-            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-            <CssBaseline />
-            {children}
+          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+          <CssBaseline />
+          {children}
         </ThemeProvider>
       </NextAppDirEmotionCacheProvider>
     </>
@@ -53,6 +53,9 @@ export default function RootLayout({
   }, []);
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <title>Xgenbox</title>
+      </head>
       <body>
         <ToastContainer />
         <Provider store={store}>

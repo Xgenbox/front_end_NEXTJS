@@ -18,7 +18,23 @@ export const ApiConfigs = {
     },
     enterprise: {
       store: "entreprise/AddEntreprise",
+    },
+    pointBin: {
+      getAll: "Pointbin/fetchAllPointBin",
+    },
+    bin: {
+      getAllBinsNotInPointBins: "bin/FetchBinsNotInPointBins",
+    },
+    score: {
+      getScore: "score/findScore",
+    },
+    cleaningService:{
+      getCleaningService: "cleaning/findSingleCleaningService",
+      store:"cleaning",
+      remove:"cleaning/delete/{id}"
+    },
+    governorates:{
+      getGovernorates: "governorates",
     }
-
   },
 };

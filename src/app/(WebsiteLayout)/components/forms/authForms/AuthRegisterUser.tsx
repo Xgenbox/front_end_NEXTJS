@@ -13,7 +13,7 @@ import { AuthService } from "../../../../../../_services/auth.service";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { CircularProgress } from "@mui/material";
-import { useToast } from "@/app/(WebsiteLayout)/hooks/useToast";
+import { useToast } from "@/app/hooks/useToast";
 
 const validationSchema = yup.object({
   name: yup

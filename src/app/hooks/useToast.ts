@@ -1,5 +1,5 @@
 import { toast } from "react-toastify";
-export const useToast = () => (type, message) => {
+export const useToast = () => (type:string, message:string) => {
   if (type === "success") {
     return toast.success(message, {
       position: "top-right",

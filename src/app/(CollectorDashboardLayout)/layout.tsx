@@ -45,7 +45,6 @@ export default function UserDashboardLayout({
 
   return (
     <MainWrapper>
-      <title>XGENBOX</title>
       {/* ------------------------------------------- */}
       {/* Main Wrapper */}
       {/* ------------------------------------------- */}

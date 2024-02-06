@@ -14,7 +14,7 @@ import { useFormik } from "formik";
 import { useState } from "react";
 import { AuthService } from "../../../../../../_services/auth.service";
 import { CollectorService } from "../../../../../../_services/collector.service";
-import { useToast } from "@/app/(WebsiteLayout)/hooks/useToast";
+import { useToast } from "@/app/hooks/useToast";
 import { useRouter } from "next/navigation";
 
 

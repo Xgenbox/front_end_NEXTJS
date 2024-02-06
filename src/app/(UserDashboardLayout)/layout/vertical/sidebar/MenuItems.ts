@@ -26,101 +26,47 @@ const Menuitems: MenuitemsType[] = [
 
   {
     id: uniqueId(),
-    title: "Sample Page",
+    title: "Dashboard",
     icon: 'screencast-2-line-duotone',
-    href: "/",
+    href: "/user/dashboard",
     bgcolor: "primary",
   },
   {
     navlabel: true,
-    subheader: "Other",
-  },
-  {
-    id: uniqueId(),
-    title: "Menu Level",
-    icon: 'double-alt-arrow-down-bold-duotone',
-    href: "/menulevel/",
-    bgcolor: "primary",
-    children: [
-      {
-        id: uniqueId(),
-        title: "Level 1",
-        href: "/l1",
-      },
-      {
-        id: uniqueId(),
-        title: "Level 1.1",
-        href: "/l1.1",
-        children: [
-          {
-            id: uniqueId(),
-            title: "Level 2",
-            href: "/l2",
-          },
-          {
-            id: uniqueId(),
-            title: "Level 2.1",
-            href: "/l2.1",
-            children: [
-              {
-                id: uniqueId(),
-                title: "Level 3",
-                href: "/l3",
-              },
-              {
-                id: uniqueId(),
-                title: "Level 3.1",
-                href: "/l3.1",
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: uniqueId(),
-    title: "Disabled",
-    icon: 'forbidden-circle-line-duotone',
-    bgcolor: "secondary",
-    href: "",
-    disabled: true,
-  },
-  {
-    id: uniqueId(),
-    title: "SubCaption",
-    subtitle: "This is the sutitle",
-    icon: 'square-academic-cap-line-duotone',
-    bgcolor: "warning",
-    href: "",
+    subheader: "Services",
   },
 
   {
     id: uniqueId(),
-    title: "Chip",
+    title: "Cleaning service",
     icon: 'archive-check-line-duotone',
-    bgcolor: "error",
-    href: "",
-    chip: "9",
-    chipColor: "error",
-  },
-  {
-    id: uniqueId(),
-    title: "Outlined",
-    icon: 'smile-circle-line-duotone',
-    bgcolor: "info",
-    href: "",
-    chip: "outline",
-    variant: "outlined",
-    chipColor: "info",
-  },
-  {
-    id: uniqueId(),
-    title: "External Link",
-    external: true,
-    icon: 'link-bold-duotone',
     bgcolor: "primary",
-    href: "https://google.com",
+    href: "/user/dashboard/cleaning-service",
+  },
+
+  {
+    id: uniqueId(),
+    title: "Scan QR code",
+    icon: 'qr-code-outline',
+    bgcolor: "primary",
+
+    href: "#",
+  },
+  {
+    id: uniqueId(),
+    title: "Manage access",
+    icon: 'airbuds-case-minimalistic-linear',
+    bgcolor: "primary",
+
+    href: "#",
+
+  },
+  {
+    id: uniqueId(),
+    title: "Users",
+    icon: 'users-group-two-rounded-broken',
+    bgcolor: "primary",
+    href: "#",
   },
 ];
 
