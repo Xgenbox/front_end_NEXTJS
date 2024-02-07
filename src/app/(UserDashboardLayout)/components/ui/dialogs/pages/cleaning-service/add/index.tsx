@@ -146,7 +146,7 @@ const AddCleaningServiceDialog = ({refresh}) => {
         startIcon={<AddIcon />}
         onClick={handleClickOpen}
       >
-        Create Cleaning service
+        Create cleaning service
       </Button>
 
       <Dialog

@@ -19,7 +19,7 @@ export const ApiConfigs = {
     enterprise: {
       store: "entreprise/AddEntreprise",
     },
-    pointBin: {
+    binPoint: {
       getAll: "Pointbin/fetchAllPointBin",
     },
     bin: {
@@ -35,6 +35,9 @@ export const ApiConfigs = {
     },
     governorates:{
       getGovernorates: "governorates",
+    },
+    user:{
+      getCurrentAccessList:"users/access/getCurrentAccessList"
     }
   },
 };

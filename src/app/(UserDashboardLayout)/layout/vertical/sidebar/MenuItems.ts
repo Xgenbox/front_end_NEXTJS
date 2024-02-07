@@ -58,7 +58,7 @@ const Menuitems: MenuitemsType[] = [
     icon: 'airbuds-case-minimalistic-linear',
     bgcolor: "primary",
 
-    href: "#",
+    href: "/user/dashboard/manage-access",
 
   },
   {

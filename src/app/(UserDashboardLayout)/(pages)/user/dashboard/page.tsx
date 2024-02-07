@@ -1,13 +1,82 @@
 "use client";
-import Typography from '@mui/material/Typography';
 import PageContainer from "@/app/(UserDashboardLayout)/components/container/PageContainer";
 import DashboardCard from "@/app/(UserDashboardLayout)/components/shared/DashboardCard";
+import UserDashboardMap from "@/app/(UserDashboardLayout)/components/pages/dashboard/map";
+import { BinPointService } from "@services/binPoint.service";
+import { useEffect, useState } from "react";
+import CustomTabs from "@/app/component/ui/tabs";
+import CustomTable from "@/app/component/ui/customTable";
+
+//tabs headers
+const tabHeaders: string[] = ["Map", "Bins list"];
+
+//bins list tab table headers
+const binsListTableHeaders: string[] = [
+  "Id",
+  "Name",
+  "Address",
+  "Gaz",
+  "Level",
+];
 
 const HomeUserDashboard = () => {
+  const [binsPointsData, setBinsPointsData] = useState<any[]>([]);
+  const [isBinsLoading, setIsBinsLoading] = useState(false);
+
+  //get all bins points data
+  const getAllBinPoints = () => {
+    setIsBinsLoading(true);
+    BinPointService.getAll()
+      .then((res) => {
+        setBinsPointsData(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setIsBinsLoading(false);
+      });
+  };
+  useEffect(() => {
+    getAllBinPoints();
+  }, []);
+
+  const binsListRowsData = binsPointsData
+    .map((binPoint) => binPoint.bins)
+    .flat()
+    .map((bin) => ({
+      id: bin._id,
+      name: bin.name,
+      address: bin.address,
+      topicGaz: bin.topicGaz,
+      niv:bin.niv+"%"
+    }));
+    
+  const binsListData = binsPointsData
+  .map((binPoint) => binPoint.bins)
+  .flat();
+
   return (
-    <PageContainer title="Sample Page" description="this is Sample page">
-      <DashboardCard title="Sample Page">
-        <Typography>This is a home user dashboard sample page</Typography>
+    <PageContainer>
+      <DashboardCard title="Nearby smart bins">
+        <>
+          <CustomTabs
+            headers={tabHeaders}
+            content={[
+              <UserDashboardMap
+                binsPointsData={binsPointsData}
+                isBinsLoading={isBinsLoading}
+              />,
+              <CustomTable
+                data={binsListData}
+                rows={binsListRowsData}
+                isLoading={isBinsLoading}
+                headers={binsListTableHeaders}
+                isCSV={true}
+              />,
+            ]}
+          />
+        </>
       </DashboardCard>
     </PageContainer>
   );

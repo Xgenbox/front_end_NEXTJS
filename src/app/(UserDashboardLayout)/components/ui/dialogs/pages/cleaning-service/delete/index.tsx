@@ -70,7 +70,7 @@ const DeleteCleaningServiceDialog = ({
         />
         <div className="pr-4 pt-4 pb-2">
           <DialogTitle id="alert-dialog-title">
-            YOU SHOULD READ THIS!
+            Are you sure!
           </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">

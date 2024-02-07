@@ -1,16 +1,16 @@
 import { authHeader, guestHeader, ApiConfigs } from "../_helpers";
 
-export const PointBinService = {
-  getAll,
+export const UserService = {
+  getCurrentAccessList,
 };
 
-async function getAll() {
+async function getCurrentAccessList() {
   const requestOptions = {
     method: "GET",
     headers: { ...authHeader(), "Content-Type": "application/json" },
   };
   return await fetch(
-    ApiConfigs.base_url + ApiConfigs.apis.pointBin.getAll,
+    ApiConfigs.base_url + ApiConfigs.apis.user.getCurrentAccessList,
     requestOptions
   ).then(handleResponse);
 }
