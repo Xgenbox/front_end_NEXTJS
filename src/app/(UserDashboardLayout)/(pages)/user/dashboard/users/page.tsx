@@ -4,19 +4,20 @@ import DashboardCard from "@/app/(UserDashboardLayout)/components/shared/Dashboa
 import CustomTable from "@/app/component/ui/customTable";
 import { useEffect, useState } from "react";
 import { UserService } from "@services/user.service";
-import AddManageAccessCodeDialog from "@/app/(UserDashboardLayout)/components/ui/dialogs/pages/manage-access/add";
 
-const headers: string[] = ["Code", "Address"];
+const headers: string[] = ["Email", "Name", "Score"];
 
-const ManageAccessUserDashboardPage = () => {
+const UsersUserDashboardPage = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [data, setData] = useState<{ code: number; address: string }[]>([]);
+  const [data, setData] = useState<
+    { email: number; name: string; score: any }[]
+  >([]);
 
-  const getCurrentAccessList = () => {
+  const geUsersWithSameBinAccessCode = () => {
     setIsLoading(true);
-    UserService.getCurrentAccessList()
+    UserService.getAllUsersWithSameBinAccessCode()
       .then((res) => {
-        setData(res.accessList.accessListBins);
+        setData(res);
       })
       .catch((err) => console.log(err))
       .finally(() => {
@@ -25,26 +26,24 @@ const ManageAccessUserDashboardPage = () => {
   };
 
   useEffect(() => {
-    getCurrentAccessList();
+    geUsersWithSameBinAccessCode();
   }, []);
 
   const rowsData = data.map((item) => ({
-    code: item.code,
-    address: item.address,
+    email: item.email,
+    name: item.name,
+    score: item.score.score,
   }));
 
   return (
     <>
       <PageContainer>
-        <DashboardCard title="List Of All Access Point Bins">
+        <DashboardCard title="Users Who Have The Same Access Bin">
           <CustomTable
             data={data}
             rows={rowsData}
             isLoading={isLoading}
             headers={headers}
-            actionButtons={[
-              <AddManageAccessCodeDialog refresh={getCurrentAccessList} />,
-            ]}
             isCSV={true}
           />
         </DashboardCard>
@@ -53,4 +52,4 @@ const ManageAccessUserDashboardPage = () => {
   );
 };
 
-export default ManageAccessUserDashboardPage;
+export default UsersUserDashboardPage;

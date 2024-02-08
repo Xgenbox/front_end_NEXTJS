@@ -13,18 +13,20 @@ import CustomFormLabel from "@/app/(UserDashboardLayout)/components/forms/theme-
 import CustomTextField from "@/app/(UserDashboardLayout)/components/forms/theme-elements/CustomTextField";
 import * as yup from "yup";
 import { useFormik } from "formik";
+import { UserService } from "@services/user.service";
 
 const validationSchema = yup.object({
-  code: yup.number().test(
-    'len', 
-    'Code must be exactly 5 digits', 
-    val => val != null && val.toString().length === 5
-  )
-  .required('Code Is Required'),
-
+  code: yup
+    .number()
+    .test(
+      "len",
+      "Code must be exactly 5 digits",
+      (val) => val != null && val.toString().length === 5
+    )
+    .required("Code Is Required"),
 });
 
-const AddManageAccessCodeDialog = ({}) => {
+const AddManageAccessCodeDialog = ({refresh}) => {
   const [open, setOpen] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
   const toast = useToast();
@@ -41,7 +43,20 @@ const AddManageAccessCodeDialog = ({}) => {
       code: undefined,
     },
     validationSchema: validationSchema,
-    onSubmit: (values) => {},
+    onSubmit: (values) => {
+      setIsLoading(true);
+      UserService.addAccessCode({ code: values.code })
+        .then((res) => {
+          toast("success", "you have successfully added an access code");
+          handleClose()
+          refresh()
+        })
+        .catch((err) => console.log(err))
+        .finally(() => {
+          setIsLoading(false);
+          formik.resetForm();
+        });
+    },
   });
 
   return (

@@ -13,16 +13,20 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
-        backgroundColor:"#e5e7eb",
+        backgroundColor: "#e5e7eb",
         p: 6,
       }}
     >
+
       <Container maxWidth="lg">
-        <div className="mb-4">
-          <Logo />
-        </div>
+
         <Grid container spacing={5}>
-          <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={3}>
+            <div >
+              <Logo />
+            </div>
+          </Grid>
+          <Grid item xs={12} sm={3}>
             <Typography variant="h6" color="text.primary" gutterBottom>
               About Us
             </Typography>
@@ -41,54 +45,75 @@ export default function Footer() {
               <Typography variant="body2">direction@xgenbox.com</Typography>
             </div>
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={3}>
             <Typography variant="h6" color="text.primary" gutterBottom>
               Support{" "}
             </Typography>
             <Link href="#">
-              <Typography variant="body2" color="text.secondary" fontSize={13} mt={1} >
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                fontSize={13}
+                mt={1}
+              >
                 Help Center{" "}
               </Typography>
             </Link>
             <Link href="#">
-              <Typography variant="body2" color="text.secondary" fontSize={13} mt={1} >
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                fontSize={13}
+                mt={1}
+              >
                 Terms Of Service
               </Typography>
             </Link>
             <Link href="#">
-              <Typography variant="body2" color="text.secondary" fontSize={13} mt={1} >
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                fontSize={13}
+                mt={1}
+              >
                 Legal{" "}
               </Typography>
             </Link>
             <Link href="#">
-              <Typography variant="body2" color="text.secondary" fontSize={13} mt={1} >
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                fontSize={13}
+                mt={1}
+              >
                 Privacy Policy{" "}
               </Typography>
             </Link>
             <Link href="#">
-              <Typography variant="body2" color="text.secondary" fontSize={13} mt={1} >
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                fontSize={13}
+                mt={1}
+              >
                 Status{" "}
               </Typography>
             </Link>
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={3}>
             <Typography variant="h6" color="text.primary" gutterBottom>
               Follow Us
             </Typography>
             <div className="flex items-center gap-4">
-            <Link href="https://www.facebook.com/" color="inherit">
-              <Facebook />
-            </Link>
-            <Link
-              href="https://www.instagram.com/"
-              color="inherit"
-      
-            >
-              <Instagram />
-            </Link>
-            <Link href="https://www.twitter.com/" color="inherit">
-              <Twitter />
-            </Link>
+              <Link href="https://www.facebook.com/" color="inherit">
+                <Facebook />
+              </Link>
+              <Link href="https://www.instagram.com/" color="inherit">
+                <Instagram />
+              </Link>
+              <Link href="https://www.twitter.com/" color="inherit">
+                <Twitter />
+              </Link>
             </div>
           </Grid>
         </Grid>

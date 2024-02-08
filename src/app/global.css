@@ -9,3 +9,8 @@
 }
 
 
+
+#reader__scan_region{
+  display:flex;
+  justify-content:center;
+}

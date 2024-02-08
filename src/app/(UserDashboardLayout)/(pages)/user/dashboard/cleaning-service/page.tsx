@@ -10,7 +10,7 @@ import DeleteCleaningServiceDialog from "@/app/(UserDashboardLayout)/components/
 
 const headers: string[] = ["Status", "Description", "Created At"];
 
-const CleaningServicePage = () => {
+const CleaningServiceUserDashboardPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState<
     { AdminAccept: string; description: string; createdAt: string }[]
@@ -69,4 +69,4 @@ const CleaningServicePage = () => {
   );
 };
 
-export default CleaningServicePage;
+export default CleaningServiceUserDashboardPage;

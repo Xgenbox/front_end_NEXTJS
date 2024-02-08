@@ -37,7 +37,9 @@ export const ApiConfigs = {
       getGovernorates: "governorates",
     },
     user:{
-      getCurrentAccessList:"users/access/getCurrentAccessList"
+      getCurrentAccessList:"users/access/getCurrentAccessList",
+      addAccessCode:"users/access/addAccess",
+      getAllUsersWithSameBinAccessCode:"users/access/getAllUserWhoHasASameAccessBin"
     }
   },
 };
