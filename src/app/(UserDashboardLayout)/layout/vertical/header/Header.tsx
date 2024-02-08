@@ -11,16 +11,13 @@ import {
   toggleMobileSidebar,
 } from "@/store/customizer/CustomizerSlice";
 import { Icon } from "@iconify/react";
-import Notifications from "./Notification";
 import Profile from "./Profile";
-import Language from "./Language";
 import { AppState } from "@/store/store";
 import { shadows } from "@/utils/theme/Shadows";
 import React from "react";
 
 const Header = () => {
   const lgUp = useMediaQuery((theme: any) => theme.breakpoints.up("lg"));
-  const smUp = useMediaQuery((theme: any) => theme.breakpoints.up("sm"));
   
 
   // drawer

@@ -46,7 +46,7 @@ const AddManageAccessCodeDialog = ({refresh}) => {
     onSubmit: (values) => {
       setIsLoading(true);
       UserService.addAccessCode({ code: values.code })
-        .then((res) => {
+        .then(() => {
           toast("success", "you have successfully added an access code");
           handleClose()
           refresh()

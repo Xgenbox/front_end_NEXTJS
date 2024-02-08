@@ -1,17 +1,9 @@
 import React from "react";
-import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
-import { Theme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { styled } from '@mui/material/styles';
 
 
-const StyledButton = styled(Button)(() => ({
-  padding: "13px 35px",
-  fontSize: "16px",
-  borderRadius: "30px",
-}));
+
 
 const BannerContent = () => {
   

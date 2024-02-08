@@ -77,7 +77,7 @@ const AuthRegisterEnterprise = ({ title, subtitle, subtext }: registerType) => {
               companyName: values.companyName,
               phone: values.phone,
             })
-              .then((res) => {
+              .then(() => {
                 toast("success", "you have successfully created an account.");
                 router.push("/login");
               })

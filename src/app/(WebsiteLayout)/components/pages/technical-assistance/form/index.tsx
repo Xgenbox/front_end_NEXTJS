@@ -7,8 +7,6 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Grid from "@mui/material/Grid";
 import MenuItem from "@mui/material/MenuItem";
 import RadioGroup from "@mui/material/RadioGroup";
-import { SliderValueLabelProps } from "@mui/material/Slider";
-import { SliderThumb } from "@mui/material/Slider";
 
 import PageContainer from "@/app/(WebsiteLayout)/components/container/PageContainer";
 

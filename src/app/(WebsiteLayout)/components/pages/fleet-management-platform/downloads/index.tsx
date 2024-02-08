@@ -1,5 +1,4 @@
 import React from "react";
-import FleetManagementPlatformQuestions from "../questions/index";
 import { Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";

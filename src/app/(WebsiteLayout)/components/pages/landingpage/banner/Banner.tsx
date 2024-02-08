@@ -2,8 +2,6 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import { Theme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import BannerContent from "./BannerContent";
 import BannerSlider from "./BannerSlider";
 import { motion } from "framer-motion";

@@ -11,15 +11,12 @@ import { styled } from '@mui/material/styles';
 import { useSelector, useDispatch } from "@/store/hooks";
 import { toggleMobileSidebar } from "@/store/customizer/CustomizerSlice";
 import { IconMenu2 } from "@tabler/icons-react";
-import Notifications from "../../vertical/header/Notification";
 import Profile from "../../vertical/header/Profile";
-import Language from "../../vertical/header/Language";
 import Logo from "../../shared/logo/Logo";
 import { AppState } from "@/store/store";
 
 export default function Header() {
   const lgDown = useMediaQuery((theme: Theme) => theme.breakpoints.down("lg"));
-  const lgUp = useMediaQuery((theme: Theme) => theme.breakpoints.up("lg"));
 
   // drawer
   const customizer = useSelector((state: AppState) => state.customizer);

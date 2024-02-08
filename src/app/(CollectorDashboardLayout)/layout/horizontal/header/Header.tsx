@@ -19,7 +19,6 @@ import { AppState } from "@/store/store";
 
 export default function Header() {
   const lgDown = useMediaQuery((theme: Theme) => theme.breakpoints.down("lg"));
-  const lgUp = useMediaQuery((theme: Theme) => theme.breakpoints.up("lg"));
 
   // drawer
   const customizer = useSelector((state: AppState) => state.customizer);

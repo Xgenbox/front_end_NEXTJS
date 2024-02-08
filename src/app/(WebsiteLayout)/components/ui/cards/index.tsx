@@ -1,17 +1,14 @@
 import React from "react";
 
-import { IconGift } from "@tabler/icons-react";
 import {
   Box,
-  Button,
   CardContent,
   CardMedia,
   Grid,
-  IconButton,
   Stack,
   Typography,
 } from "@mui/material";
-import BlankCard from "../../BlankCard";
+import BlankCard from "../../shared/BlankCard";
 
 const Cards = ({ cards, title = "" ,pt=0}) => {
   return (

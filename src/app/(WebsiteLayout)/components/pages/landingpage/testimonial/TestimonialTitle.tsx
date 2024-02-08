@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import AnimationFadeIn from '../../shared/animation/Animation';
+import AnimationFadeIn from '../../../shared/animation/Animation';
 
 const TestimonialTitle = () => {
   return (

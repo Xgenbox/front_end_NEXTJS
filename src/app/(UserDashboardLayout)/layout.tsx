@@ -2,7 +2,7 @@
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import { styled, useTheme } from "@mui/material/styles";
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect } from "react";
 import Header from "./layout/vertical/header/Header";
 import Sidebar from "./layout/vertical/sidebar/Sidebar";
 import Customizer from "./layout/shared/customizer/Customizer";
@@ -21,28 +21,22 @@ const PageWrapper = styled("div")(() => ({
   backgroundColor: "transparent",
 }));
 
-interface Props {
-  children: React.ReactNode;
-}
-
 export default function UserDashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const auth=useSelector(state=>state.auth)
+  const auth = useSelector((state) => state.auth);
   //*router hook
-  const router=useRouter()
-    
-//*auth protect routes
-  useLayoutEffect(() => {
-    if(!auth.isLoggedIn || auth.role!=="USER"){
-      router.push("/login")
-    }
-  },[auth])
+  const router = useRouter();
 
-  const [isSidebarOpen, setSidebarOpen] = useState(true);
-  const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+  //*auth protect routes
+  useLayoutEffect(() => {
+    if (!auth.isLoggedIn || auth.role !== "USER") {
+      router.push("/login");
+    }
+  }, [auth]);
+
   const customizer = useSelector((state: AppState) => state.customizer);
   const theme = useTheme();
 

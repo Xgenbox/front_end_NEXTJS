@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 interface User {
   // Define your user type here

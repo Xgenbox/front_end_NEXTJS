@@ -10,9 +10,9 @@ export const refreshAuthentication = (
   if (user && user.token) {
     dispatch(authActions.login(user.token));
   } else {
-    // if (pathname.includes("/dashboard")) {
-    //   dispatch(authActions.logout());
-    //   router.push("/login");
-    // }
+    if (pathname.includes("/dashboard")) {
+      dispatch(authActions.logout());
+      router.push("/login");
+    }
   }
 };

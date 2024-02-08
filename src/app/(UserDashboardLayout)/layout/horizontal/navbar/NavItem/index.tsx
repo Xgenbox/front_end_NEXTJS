@@ -77,22 +77,11 @@ const NavItem = ({ item, level, pathDirect, onClick }: ItemType) => {
     },
   }));
 
-  const listItemProps: {
-    component: any;
-    href?: string;
-    target?: any;
-    to?: any;
-  } = {
-    component: item?.external ? "a" : Link,
-    to: item?.href,
-    href: item?.external ? item?.href : "",
-    target: item?.external ? "_blank" : "",
-  };
+
   return (
     <List component="li" disablePadding key={item.id}>
       <Link href={`${item?.href}`}>
         <ListItemStyled2
-          //{...listItemProps}
           disabled={item?.disabled}
           selected={pathDirect === item?.href}
           onClick={onClick}

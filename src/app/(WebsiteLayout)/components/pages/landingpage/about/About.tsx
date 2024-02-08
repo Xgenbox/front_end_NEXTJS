@@ -1,4 +1,4 @@
-import { Avatar, CardContent, Chip, Grid, Typography } from "@mui/material";
+import { Avatar, CardContent, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { Icon } from "@iconify/react";
@@ -89,7 +89,7 @@ const About = () => {
                       Inefficient collection
                     </h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
-                      Inefficient Collection" identifies and addresses waste
+                      Inefficient Collection identifies and addresses waste
                       collection inefficiencies, optimizing routes and schedules
                       for reduced costs and environmental impact.
                     </p>
@@ -249,7 +249,7 @@ const About = () => {
         <div className="flex-1 flex flex-col justify-between items-start">
           <div>
             <Typography fontSize="25px" fontWeight={500} textAlign="left">
-              Presentation of XGENBOX's Solution
+              Presentation of XGENBOX&ldquo;s Solution
             </Typography>
             <Typography
               fontSize="16px"

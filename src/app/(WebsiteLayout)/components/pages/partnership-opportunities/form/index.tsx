@@ -7,8 +7,6 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Grid from "@mui/material/Grid";
 import MenuItem from "@mui/material/MenuItem";
 import RadioGroup from "@mui/material/RadioGroup";
-import { SliderValueLabelProps } from "@mui/material/Slider";
-import { SliderThumb } from "@mui/material/Slider";
 
 import PageContainer from "@/app/(WebsiteLayout)/components/container/PageContainer";
 
@@ -20,38 +18,7 @@ import CustomCheckbox from "@/app/(WebsiteLayout)/components/forms/theme-element
 import ParentCard from "@/app/(WebsiteLayout)/components/shared/ParentCard";
 import { Typography } from "@mui/material";
 
-function CustomThumbComponent(props: SliderValueLabelProps) {
-  const { children, ...other } = props;
 
-  return (
-    <SliderThumb {...other}>
-      {children}
-      <Box
-        sx={{
-          height: 9,
-          width: "2px",
-          backgroundColor: "#fff",
-        }}
-      />
-      <Box
-        sx={{
-          height: "14px",
-          width: "2px",
-          backgroundColor: "#fff",
-          ml: "2px",
-        }}
-      />
-      <Box
-        sx={{
-          height: 9,
-          width: "2px",
-          backgroundColor: "#fff",
-          ml: "2px",
-        }}
-      />
-    </SliderThumb>
-  );
-}
 
 export default function PartnershipOpportunitiesForm() {
   const [age, setAge] = React.useState("1");

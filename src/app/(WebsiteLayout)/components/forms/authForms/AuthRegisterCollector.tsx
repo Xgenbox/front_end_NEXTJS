@@ -73,7 +73,7 @@ const router=useRouter()
               lastName: values.lastName,
               entityType: accountTypeSelectValue,
             })
-              .then((res) => {
+              .then(() => {
                 toast("success","you have successfully created an account.")
                 router.push("/login");
 

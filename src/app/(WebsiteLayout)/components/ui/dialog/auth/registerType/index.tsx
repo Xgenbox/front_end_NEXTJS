@@ -193,7 +193,7 @@ const RegisterTypeDialog = ({ isText = false, isBtn = false }) => {
                   </Typography>
                   <Typography variant="subtitle1" color="textSecondary" mt={1}>
                     Register your business for exclusive access to our
-                    platform's features.
+                    platform&ldquo;s features.
                   </Typography>
                   <div className="flex items-center justify-end mt-2">
                     <Link href="/register/enterprise">

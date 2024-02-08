@@ -6,7 +6,7 @@ import Container from '@mui/material/Container';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import AnimationFadeIn from "../../shared/animation/Animation";
+import AnimationFadeIn from "../../../shared/animation/Animation";
 
 //Carousel slider for product
 import Slider from "react-slick";
@@ -100,7 +100,7 @@ const Testimonial = () => {
                         size="large"
                         name="simple-controlled"
                         value={value}
-                        onChange={(event, newValue) => {
+                        onChange={(_, newValue) => {
                           setValue(newValue);
                         }}
                       />

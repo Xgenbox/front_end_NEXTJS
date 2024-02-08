@@ -1,7 +1,6 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
-import { useSelector } from "@/store/hooks";
 import { usePathname } from "next/navigation";
 
 // mui imports
@@ -21,7 +20,6 @@ import { isNull } from "lodash";
 // plugins
 import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
 import { useTranslation } from "react-i18next";
-import { AppState } from "@/store/store";
 
 type NavGroupProps = {
   [x: string]: any;
@@ -52,7 +50,6 @@ export default function NavCollapse({
 }: NavCollapseProps) {
   const lgDown = useMediaQuery((theme: Theme) => theme.breakpoints.down("lg"));
 
-  const customizer = useSelector((state: AppState) => state.customizer);
   // const Icon = menu?.icon;
   const theme = useTheme();
   const pathname = usePathname();
