@@ -1,5 +1,5 @@
 function server() {
-  return process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000/api/";
+  return process.env.NEXT_PUBLIC_API_URL ?? "https://xgen.onrender.com/api/";
 }
 
 export const ApiConfigs = {
