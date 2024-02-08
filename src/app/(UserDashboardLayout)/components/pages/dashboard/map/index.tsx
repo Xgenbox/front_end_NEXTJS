@@ -7,10 +7,6 @@ import MapLoader from "@/app/component/ui/loaders/mapLoader";
 import { binsIsFilled } from "@/utils/methods/bins";
 import CustomCircularProgress from "@/app/component/ui/progress";
 
-interface MarkerData {
-  geocode: [number, number];
-  popUp: string;
-}
 
 // my location marker
 const myLocationIcon = new L.Icon({

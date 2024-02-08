@@ -32,7 +32,7 @@ const FleetManagementPlatformHero = () => {
 
       <div className="sm:h-auto h-48 overflow-hidden  lg:h-auto xl:w-5/12">
         <img
-          src="/images/landingpage/about/phone-application.png"
+          src="/images/pages/landingpage/about/phone-application.png"
           loading="lazy"
           alt="img"
           className="h-full w-full object-cover object-center"

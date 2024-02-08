@@ -36,7 +36,7 @@ const SkeletonTable = ({
           </tr>
         </thead>
         <tbody className="table-group-divider">
-          {items.map((item, i) => (
+          {items.map((_, i) => (
             <tr key={"Rows" + i}>
               {Array.from({ length: columnsCount }).map((_, i) => (
                 <th key={"Col2" + i}>

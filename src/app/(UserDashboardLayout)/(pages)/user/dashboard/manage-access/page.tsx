@@ -43,7 +43,7 @@ const ManageAccessUserDashboardPage = () => {
             isLoading={isLoading}
             headers={headers}
             actionButtons={[
-              <AddManageAccessCodeDialog refresh={getCurrentAccessList} />,
+              (key)=><AddManageAccessCodeDialog key={key} refresh={getCurrentAccessList} />,
             ]}
             isCSV={true}
           />

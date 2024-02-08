@@ -1,11 +1,10 @@
 "use client";
-import React, { useEffect, useLayoutEffect } from "react";
+import React, {  useLayoutEffect } from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeSettings } from "@/utils/theme/Theme";
 import { store } from "@/store/store";
-import { useDispatch, useSelector } from "@/store/hooks";
-import { AppState } from "@/store/store";
+import { useDispatch } from "@/store/hooks";
 import { Provider } from "react-redux";
 
 // import NextNProgress from "nextjs-progressbar";
@@ -20,11 +19,10 @@ import "./global.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { refreshAuthentication } from "@/utils/methods/auth";
-import { usePathname, useRouter,redirect } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export const MyApp = ({ children }: { children: React.ReactNode }) => {
   const theme = ThemeSettings();
-  const customizer = useSelector((state: AppState) => state.customizer);
 
   //*router hook
   const router = useRouter();

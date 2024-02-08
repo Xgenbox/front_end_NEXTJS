@@ -9,7 +9,6 @@ import { CircularProgress, ListItemIcon, MenuItem } from "@mui/material";
 import { IconTrash } from "@tabler/icons-react";
 import Image from "next/image";
 import { CleaningServiceService } from "@services/cleaningService.service";
-import PageLoader from "@/app/component/ui/loaders/pageLoader";
 import { useToast } from "@/app/hooks/useToast";
 
 const DeleteCleaningServiceDialog = ({
@@ -32,7 +31,7 @@ const DeleteCleaningServiceDialog = ({
   const deleteCleaningService = () => {
     setIsLoading(true);
     CleaningServiceService.remove(singleItemData._id)
-      .then((res) => {
+      .then(() => {
         toast("success", "you have successfully deleted this item");
         refresh();
         handleClose();
@@ -74,7 +73,7 @@ const DeleteCleaningServiceDialog = ({
           </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
-              When you click on "Delete" this item will be deleted and can't be
+              When you click on Delete this item will be deleted and can&ldquo;t be
               restored.
             </DialogContentText>
           </DialogContent>

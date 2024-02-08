@@ -78,7 +78,9 @@ const AddCleaningServiceDialog = ({refresh}) => {
         setSelectedGovernorateIndex(0);
         setSelectedMunicipalIndex(0);
       })
-      .catch((err) => {})
+      .catch((err) => {
+        console.log(err)
+      })
       .finally(() => {
         setGovernoratesIsLoading(false);
       });
@@ -117,7 +119,7 @@ const AddCleaningServiceDialog = ({refresh}) => {
             ?.municipalities[selectedMunicipalIndex],
         ...(selectedFile !== null && { image: selectedFile }),
       })
-        .then((res) => {
+        .then(() => {
           refresh()
           toast(
             "success",
@@ -168,7 +170,7 @@ const AddCleaningServiceDialog = ({refresh}) => {
               Create Cleaning service
             </Typography>
             <Typography fontSize={{ lg: 16, xs: 13 }} textAlign="center" mb={4}>
-              If you have cleaned your (garden, Home, ...) and you don't have a
+              If you have cleaned your garden, Home, etc. And you don&ldquo;t have a
               place to dispose of the waste, call us and we can assist you.
             </Typography>
 
@@ -194,7 +196,7 @@ const AddCleaningServiceDialog = ({refresh}) => {
                         governoratesData?.governorates.map(
                           (item: singleGovernorateType, index: number) => {
                             return (
-                              <MenuItem value={index}>{item.name}</MenuItem>
+                              <MenuItem value={index} key={index}>{item.name}</MenuItem>
                             );
                           }
                         )
@@ -220,7 +222,7 @@ const AddCleaningServiceDialog = ({refresh}) => {
                         governoratesData?.governorates[
                           selectedGovernorateIndex
                         ]?.municipalities.map((item: string, index: number) => {
-                          return <MenuItem value={index}>{item}</MenuItem>;
+                          return <MenuItem value={index} key={index}>{item}</MenuItem>;
                         })
                       )}
                     </CustomSelect>

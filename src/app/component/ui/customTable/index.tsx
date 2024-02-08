@@ -10,11 +10,11 @@ import TableRow from "@mui/material/TableRow";
 import Typography from "@mui/material/Typography";
 import { IconDotsVertical } from "@tabler/icons-react";
 import BlankCard from "../../../(UserDashboardLayout)/components/shared/BlankCard";
-import SkeletonTable from "../../../(UserDashboardLayout)/components/ui/loaders/skeletons/skeletonTable";
 import CustomTextField from "../../../(UserDashboardLayout)/components/forms/theme-elements/CustomTextField";
 import CustomFormLabel from "../../../(UserDashboardLayout)/components/forms/theme-elements/CustomFormLabel";
 import { Button, TablePagination } from "@mui/material";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
+import SkeletonTable from "../loaders/skeletons/skeletonTable";
 
 //*about this component
 //headers is an array of strings that represent the table headers
@@ -33,8 +33,8 @@ interface propsTypes {
   data: any;
   isLoading: boolean;
   headers: string[];
-  actionButtons?: JSX.Element[];
-  actionMenuItems?: ((func: () => void, data: any) => JSX.Element)[];
+  actionButtons?: ((key:any)=>JSX.Element)[];
+  actionMenuItems?: ((func: () => void, data: any, key: any) => JSX.Element)[];
   isCSV?: boolean;
 }
 
@@ -71,7 +71,7 @@ const CustomTable = ({
   );
 
   //table pagination handler functions
-  const handleChangePage = (event, newPage) => {
+  const handleChangePage = (_, newPage) => {
     setPage(newPage);
   };
 
@@ -129,7 +129,7 @@ const CustomTable = ({
         </div>
         <div className="flex flex-col sm:flex-row gap-2">
           {actionButtons?.map((btn, index) => {
-            return btn;
+            return <div key={index}>{btn(index)}</div>;
           })}
           {isCSV && (
             <Button
@@ -212,9 +212,11 @@ const CustomTable = ({
                                 "aria-labelledby": "basic-button",
                               }}
                             >
-                              {actionMenuItems?.map((menu) =>
-                                menu(handleClose, data[index])
-                              )}
+                              {actionMenuItems?.map((menu, index) => (
+                                <div key={index}>
+                                  {menu(handleClose, data[index], index)}
+                                </div>
+                              ))}
                             </Menu>
                           </>
                         )}

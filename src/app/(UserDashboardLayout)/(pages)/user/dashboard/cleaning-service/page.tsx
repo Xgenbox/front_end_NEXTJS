@@ -35,7 +35,7 @@ const CleaningServiceUserDashboardPage = () => {
   const rowsData = data.map((item) => ({
     AdminAccept: item.AdminAccept,
     description: item.description,
-    createdAt: moment(item.createdAt).format("'MMMM Do YYYY, h:mm:ss a"),
+    createdAt: moment(item.createdAt).format("MMMM Do YYYY, h:mm:ss a"),
   }));
 
   return (
@@ -48,12 +48,13 @@ const CleaningServiceUserDashboardPage = () => {
             isLoading={isLoading}
             headers={headers}
             actionButtons={[
-              <AddCleaningServiceDialog refresh={getCleaningService} />,
+              (key)=><AddCleaningServiceDialog key={key} refresh={getCleaningService} />,
             ]}
             actionMenuItems={[
-              (closeMenu, singleItemData) => {
+              (closeMenu, singleItemData,key) => {
                 return (
                   <DeleteCleaningServiceDialog
+                  key={key}
                     refresh={getCleaningService}
                     closeMenu={closeMenu}
                     singleItemData={singleItemData}

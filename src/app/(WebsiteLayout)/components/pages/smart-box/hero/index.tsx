@@ -47,9 +47,9 @@ const SmartBoxHero = () => {
 
     <div className="sm:h-auto h-48 overflow-hidden  lg:h-auto xl:w-5/12">
       <img
-        src="/images/landingpage/about/bin.png"
+        src="/images/pages/landingpage/about/bin.png"
         loading="lazy"
-        alt="Photo by Fakurian Design"
+        alt="bin img"
         className="h-full w-full object-cover object-center"
       />
     </div>

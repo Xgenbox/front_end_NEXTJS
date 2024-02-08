@@ -119,7 +119,16 @@ const TopCards = () => {
                     <Box mb={4}>{stat.iconsm}</Box>
                     <Typography variant="h4">{stat.title}</Typography>
                     <Button
-                      color={stat.color ? stat.color : "primary"}
+                      color={
+                        (stat.color ? stat.color : "primary") as
+                          | "primary"
+                          | "secondary"
+                          | "warning"
+                          | "error"
+                          | "info"
+                          | "success"
+                          | "inherit"
+                      }
                       variant="contained"
                       href={stat.href}
                       sx={{

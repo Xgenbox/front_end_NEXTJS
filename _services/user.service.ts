@@ -1,4 +1,4 @@
-import { authHeader, guestHeader, ApiConfigs } from "../_helpers";
+import { authHeader, ApiConfigs } from "../_helpers";
 
 export const UserService = {
   getCurrentAccessList,

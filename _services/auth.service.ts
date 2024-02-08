@@ -1,4 +1,4 @@
-import { authHeader, guestHeader, ApiConfigs } from "../_helpers";
+import {guestHeader, ApiConfigs } from "../_helpers";
 
 export const AuthService = {
   registerUser,

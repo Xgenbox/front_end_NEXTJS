@@ -131,7 +131,7 @@ const Questions = () => {
                 <AccordionDetails>
                   <ul className="list-disc">
                     {item.answers.map((answer, index) => (
-                      <li className="ml-10">
+                      <li className="ml-10" key={index}>
                         <Typography
                           key={index}
                           variant="subtitle1"

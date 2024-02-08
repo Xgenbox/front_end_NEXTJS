@@ -8,12 +8,12 @@ export default function CustomTabs({
   content,
 }: {
   headers: string[];
-  content: JSX.Element[];
+  content: ((key: any) => JSX.Element)[];
 }) {
   const [value, setValue] = React.useState(0);
   const [selectedTab, setSelectedTab] = React.useState(0);
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleChange = (_: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
@@ -40,7 +40,7 @@ export default function CustomTabs({
           ))}
         </Tabs>
         <div className="h-4"></div>
-        {content[selectedTab]}
+        {content[selectedTab](selectedTab)}
       </Box>
     </>
   );

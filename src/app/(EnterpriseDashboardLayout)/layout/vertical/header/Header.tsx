@@ -20,7 +20,6 @@ import React from "react";
 
 const Header = () => {
   const lgUp = useMediaQuery((theme: any) => theme.breakpoints.up("lg"));
-  const smUp = useMediaQuery((theme: any) => theme.breakpoints.up("sm"));
   
 
   // drawer

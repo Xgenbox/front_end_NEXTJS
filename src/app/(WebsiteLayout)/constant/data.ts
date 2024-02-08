@@ -232,19 +232,19 @@ const SmartCitiesChipData: chipType[] = [
 const SmartCitiesCards = [
   {
     title: "Streets",
-    avatar: "/images/smart-cities/cards/streets.png",
+    avatar: "/images/pages/smart-cities/cards/streets.png",
   },
   {
     title: "Stations",
-    avatar: "/images/smart-cities/cards/stations.png",
+    avatar: "/images/pages/smart-cities/cards/stations.png",
   },
   {
     title: "Parcs",
-    avatar: "/images/smart-cities/cards/parc.png",
+    avatar: "/images/pages/smart-cities/cards/parc.png",
   },
   {
     title: "Beaches",
-    avatar: "/images/smart-cities/cards/beach.png",
+    avatar: "/images/pages/smart-cities/cards/beach.png",
   },
 ];
 const CommercialEstablishmentsChipData: chipType[] = [
@@ -270,37 +270,37 @@ const CommercialEstablishmentsChipData: chipType[] = [
 const CommercialEstablishmentsCards = [
   {
     title: "Mall",
-    avatar: "/images/commercial-establishments/cards/commercial.png",
+    avatar: "/images/pages/commercial-establishments/cards/commercial.png",
   },
   {
     title: "Airport",
-    avatar: "/images/commercial-establishments/cards/aeroports.png",
+    avatar: "/images/pages/commercial-establishments/cards/aeroports.png",
   },
   {
     title: "Congress Palace",
-    avatar: "/images/commercial-establishments/cards/congress.png",
+    avatar: "/images/pages/commercial-establishments/cards/congress.png",
   },
   {
     title: "Office complex",
-    avatar: " /images/commercial-establishments/cards/bureaux.png",
+    avatar: " /images/pages/commercial-establishments/cards/bureaux.png",
   },
 ];
 const PrivateOrganizationsCards = [
   {
     title: "Universities",
-    avatar: "/images/private-organizations/cards/university.png",
+    avatar: "/images/pages/private-organizations/cards/university.png",
   },
   {
     title: "Theme parks",
-    avatar: "/images/private-organizations/cards/theme-parc.png",
+    avatar: "/images/pages/private-organizations/cards/theme-parc.png",
   },
   {
     title: "Hospitals",
-    avatar: "/images/private-organizations/cards/hospital.png",
+    avatar: "/images/pages/private-organizations/cards/hospital.png",
   },
   {
     title: "Zoos",
-    avatar: " /images/private-organizations/cards/zoo.png",
+    avatar: " /images/pages/private-organizations/cards/zoo.png",
   },
 ];
 

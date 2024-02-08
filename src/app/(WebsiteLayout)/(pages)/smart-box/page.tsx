@@ -6,7 +6,7 @@ import SmartBoxHero from "../../components/pages/smart-box/hero";
 import SmartBoxCharacteristics from "../../components/pages/smart-box/characteristics";
 import SmartBoxBrochure from "../../components/pages/quote-request/brochure";
 import { SmartBoxChipsData1, SmartBoxChipsData2 } from "../../constant/data";
-import Chips from "../../components/shared/pages/chips";
+import Chips from "../../components/ui/chips";
 const SmartBox = () => {
   return (
     <PageLayout>

@@ -43,7 +43,7 @@ const ABoutCompanyHero = () => {
 
       <div className="sm:h-auto h-48 w-full overflow-hidden  lg:h-auto xl:w-5/12 rounded-xl shadow-lg">
         <img
-          src="/images/about-company/office-wall.png"
+          src="/images/pages/about-company/office-wall.png"
           loading="lazy"
           alt="img"
           className="h-full w-full object-cover object-center"

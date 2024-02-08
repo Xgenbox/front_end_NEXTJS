@@ -1,11 +1,16 @@
 "use client";
 import PageContainer from "@/app/(UserDashboardLayout)/components/container/PageContainer";
 import DashboardCard from "@/app/(UserDashboardLayout)/components/shared/DashboardCard";
-import UserDashboardMap from "@/app/(UserDashboardLayout)/components/pages/dashboard/map";
 import { BinPointService } from "@services/binPoint.service";
 import { useEffect, useState } from "react";
 import CustomTabs from "@/app/component/ui/tabs";
 import CustomTable from "@/app/component/ui/customTable";
+import dynamic from 'next/dynamic';
+
+const UserDashboardMap = dynamic(
+    () => import('@/app/(UserDashboardLayout)/components/pages/dashboard/map'),
+    { ssr: false }
+);
 
 //tabs headers
 const tabHeaders: string[] = ["Map", "Bins list"];
@@ -49,12 +54,10 @@ const HomeUserDashboard = () => {
       name: bin.name,
       address: bin.address,
       topicGaz: bin.topicGaz,
-      niv:bin.niv+"%"
+      niv: bin.niv + "%",
     }));
-    
-  const binsListData = binsPointsData
-  .map((binPoint) => binPoint.bins)
-  .flat();
+
+  const binsListData = binsPointsData.map((binPoint) => binPoint.bins).flat();
 
   return (
     <PageContainer>
@@ -63,17 +66,23 @@ const HomeUserDashboard = () => {
           <CustomTabs
             headers={tabHeaders}
             content={[
-              <UserDashboardMap
-                binsPointsData={binsPointsData}
-                isBinsLoading={isBinsLoading}
-              />,
-              <CustomTable
-                data={binsListData}
-                rows={binsListRowsData}
-                isLoading={isBinsLoading}
-                headers={binsListTableHeaders}
-                isCSV={true}
-              />,
+              (key) => (
+                <UserDashboardMap
+                  key={key}
+                  binsPointsData={binsPointsData}
+                  isBinsLoading={isBinsLoading}
+                />
+              ),
+              (key) => (
+                <CustomTable
+                  key={key}
+                  data={binsListData}
+                  rows={binsListRowsData}
+                  isLoading={isBinsLoading}
+                  headers={binsListTableHeaders}
+                  isCSV={true}
+                />
+              ),
             ]}
           />
         </>

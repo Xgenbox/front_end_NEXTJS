@@ -2,7 +2,7 @@
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import { styled, useTheme } from "@mui/material/styles";
-import React, { useState } from "react";
+import React from "react";
 import Header from "./layout/vertical/header/Header";
 import Sidebar from "./layout/vertical/sidebar/Sidebar";
 import Customizer from "./layout/shared/customizer/Customizer";
@@ -20,17 +20,13 @@ const PageWrapper = styled("div")(() => ({
   backgroundColor: "transparent",
 }));
 
-interface Props {
-  children: React.ReactNode;
-}
 
 export default function UserDashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [isSidebarOpen, setSidebarOpen] = useState(true);
-  const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+
   const customizer = useSelector((state: AppState) => state.customizer);
   const theme = useTheme();
 

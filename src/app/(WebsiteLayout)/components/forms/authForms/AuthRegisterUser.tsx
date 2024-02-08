@@ -46,12 +46,10 @@ const AuthRegisterUser = ({ title, subtitle, subtext }: registerType) => {
     onSubmit: (values) => {
       setIsLoading(true);
       AuthService.registerUser({ ...values, role: "USER" })
-        .then((res) => {
-          if (res.success) {
-            toast("success", "you have successfully created an account.");
+        .then(() => {
+          toast("success", "you have successfully created an account.");
 
-            router.push("/login");
-          }
+          router.push("/login");
         })
         .catch((err) => {
           console.log(err);
