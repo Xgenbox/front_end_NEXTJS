@@ -11,12 +11,19 @@ import { Icon } from "@iconify/react";
 import { Stack } from "@mui/system";
 import { useDispatch, useSelector } from "@/store/hooks";
 import { authActions } from "@/store/auth/authSlice";
+import { useRouter } from "next/navigation";
+import { useToast } from "@/app/hooks/useToast";
 
 const Profile = () => {
   const auth = useSelector((state) => state.auth);
   const dispatch=useDispatch()
   const lgUp = useMediaQuery((theme: any) => theme.breakpoints.up("lg"));
 
+  //*router hook
+  const router=useRouter()
+    //*toast hook
+    const toast=useToast()
+  
   const [anchorEl2, setAnchorEl2] = useState(null);
   const handleClick2 = (event: any) => {
     setAnchorEl2(event.currentTarget);
@@ -24,7 +31,11 @@ const Profile = () => {
   const handleClose2 = () => {
     setAnchorEl2(null);
   };
-
+const logout=()=>{
+  dispatch(authActions.logout())
+  toast("info","Logging you out")
+  router.push("/login")
+}
   return (
     <div className="bg-transparent hover:bg-[#e5f3fb] duration-200 cursor-pointer rounded-xl">
       <Box>
@@ -122,7 +133,7 @@ const Profile = () => {
             <Button
               variant="contained"
               color="primary"
-              onClick={() => dispatch(authActions.logout())}
+              onClick={logout}
               fullWidth
             >
               Log out

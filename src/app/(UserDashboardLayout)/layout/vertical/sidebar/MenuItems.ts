@@ -28,8 +28,8 @@ const Menuitems: MenuitemsType[] = [
     id: uniqueId(),
     title: "Dashboard",
     icon: 'screencast-2-line-duotone',
-    href: "/user/dashboard",
     bgcolor: "primary",
+    href: "/user/dashboard",
   },
   {
     navlabel: true,
@@ -49,15 +49,13 @@ const Menuitems: MenuitemsType[] = [
     title: "Scan QR code",
     icon: 'qr-code-outline',
     bgcolor: "primary",
-
-    href: "#",
+    href: "/user/dashboard/scan",
   },
   {
     id: uniqueId(),
     title: "Manage access",
     icon: 'airbuds-case-minimalistic-linear',
     bgcolor: "primary",
-
     href: "/user/dashboard/manage-access",
 
   },
@@ -66,7 +64,7 @@ const Menuitems: MenuitemsType[] = [
     title: "Users",
     icon: 'users-group-two-rounded-broken',
     bgcolor: "primary",
-    href: "#",
+    href: "/user/dashboard/users",
   },
 ];
 

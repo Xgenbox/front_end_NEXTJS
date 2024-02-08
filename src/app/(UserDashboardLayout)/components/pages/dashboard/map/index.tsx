@@ -38,10 +38,23 @@ export default function UserDashboardMap({ binsPointsData, isBinsLoading }) {
 
   // get current location
   const getCurrentLocation = () => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      const { latitude, longitude } = position.coords;
-      setCurrentLocation({ latitude, longitude, isFetched: true });
-    });
+    // Check if Geolocation is supported
+    if (!navigator.geolocation) {
+      console.error("Geolocation is not supported by your browser");
+      return;
+    }
+    // Use the Geolocation API to get the current position
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        // console.log("navigator current location: ", { latitude, longitude });
+        setCurrentLocation({ latitude, longitude, isFetched: true });
+      },
+      (error) => {
+        console.error("Error fetching geolocation: ", error.message);
+        // Optionally, handle errors or set a fallback location
+      }
+    );
   };
   useEffect(() => {
     getCurrentLocation();
@@ -125,7 +138,7 @@ export default function UserDashboardMap({ binsPointsData, isBinsLoading }) {
             })}
         </MarkerClusterGroup>
       </MapContainer>
-      {isBinsLoading || !currentLocation.isFetched && <MapLoader />}
+      {isBinsLoading || (!currentLocation.isFetched && <MapLoader />)}
     </div>
   );
 }

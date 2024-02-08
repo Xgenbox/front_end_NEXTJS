@@ -1,10 +1,10 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeSettings } from "@/utils/theme/Theme";
 import { store } from "@/store/store";
-import { useSelector } from "@/store/hooks";
+import { useDispatch, useSelector } from "@/store/hooks";
 import { AppState } from "@/store/store";
 import { Provider } from "react-redux";
 
@@ -19,16 +19,24 @@ import "slick-carousel/slick/slick-theme.css";
 import "./global.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import { useDispatch } from "@/store/hooks";
 import { refreshAuthentication } from "@/utils/methods/auth";
+import { usePathname, useRouter,redirect } from "next/navigation";
+
 export const MyApp = ({ children }: { children: React.ReactNode }) => {
   const theme = ThemeSettings();
   const customizer = useSelector((state: AppState) => state.customizer);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    refreshAuthentication(dispatch);
-  }, []);
 
+  //*router hook
+  const router = useRouter();
+  //*pathname hook
+  const pathname=usePathname()
+
+  //*stay loggedin on reload
+  const dispatch = useDispatch();
+  useLayoutEffect(() => {
+    //custom middleware function
+    refreshAuthentication(dispatch,router,pathname);
+  }, []);
   return (
     <>
       <NextAppDirEmotionCacheProvider options={{ key: "modernize" }}>
@@ -51,6 +59,7 @@ export default function RootLayout({
   React.useEffect(() => {
     setTimeout(() => setLoading(true), 3000);
   }, []);
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>

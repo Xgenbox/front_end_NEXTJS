@@ -18,6 +18,8 @@ import { CircularProgress } from "@mui/material";
 import { useState } from "react";
 import { useDispatch } from "@/store/hooks";
 import { authActions } from "@/store/auth/authSlice";
+import { useToast } from "@/app/hooks/useToast";
+import { useRouter } from "next/navigation";
 
 const validationSchema = yup.object({
   email: yup
@@ -35,6 +37,12 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => {
   const dispatch = useDispatch();
   //* component state and methods
   const [isLoading, setIsLoading] = useState(false);
+//*toast hook
+const toast=useToast()
+//*router
+const router=useRouter()
+
+//*form handling
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -47,6 +55,8 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => {
         .then((res) => {
           if (res.status) {
             dispatch(authActions.login(res.token));
+            toast("success","logged in successfully")
+            router.push("/user/dashboard")
           }
         })
         .catch((err) => {

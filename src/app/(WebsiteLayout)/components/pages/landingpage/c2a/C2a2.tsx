@@ -9,7 +9,7 @@ import { Theme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { styled } from '@mui/material/styles';
-import c2aImg from "public/images/landingpage/background/c2a.png";
+import c2aImg from "public/images/pages/landingpage/background/c2a.png";
 import Image from "next/image";
 import { AppState } from "@/store/store";
 import { useSelector } from "@/store/hooks";
