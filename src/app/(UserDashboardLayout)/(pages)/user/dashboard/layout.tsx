@@ -1,5 +1,7 @@
 "use client";
-import StatsCard from "@/app/(UserDashboardLayout)/components/ui/cards/statsCard";
+
+import StatsCard from "@/app/component/ui/cards/statsCard";
+
 // import { useSelector } from "@/store/hooks";
 // import { ScoreService } from "@services/score.service";
 // import { useEffect } from "react";

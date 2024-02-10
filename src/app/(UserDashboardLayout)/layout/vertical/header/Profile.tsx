@@ -32,9 +32,8 @@ const Profile = () => {
     setAnchorEl2(null);
   };
 const logout=()=>{
-  dispatch(authActions.logout())
+  dispatch(authActions.logout({router}))
   toast("info","Logging you out")
-  router.push("/login")
 }
   return (
     <div className="bg-transparent hover:bg-[#e5f3fb] duration-200 cursor-pointer rounded-xl">

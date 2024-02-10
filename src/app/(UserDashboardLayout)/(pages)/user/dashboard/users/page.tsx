@@ -10,7 +10,7 @@ const headers: string[] = ["Email", "Name", "Score"];
 const UsersUserDashboardPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState<
-    { email: number; name: string; score: any }[]
+    { email: string; name: string; score: any }[]
   >([]);
 
   const geUsersWithSameBinAccessCode = () => {

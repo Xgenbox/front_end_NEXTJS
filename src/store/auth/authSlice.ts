@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { jwtDecode } from "jwt-decode";
-
 interface StateType {
   name: string;
   email: string;
@@ -33,28 +32,42 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     login(state, action) {
-      const decodedToken: decodedTokenType = jwtDecode(action.payload);
+      const decodedToken: decodedTokenType = jwtDecode(action.payload.token);
       if (decodedToken.verified && !decodedToken.isBlocked) {
         localStorage.setItem(
           "user",
           JSON.stringify({
-            token: action.payload,
+            token: action.payload.token,
           })
         );
         state.name = decodedToken.name;
         state.email = decodedToken.email;
         state.role = decodedToken.role;
-        state.token = action.payload;
+        state.token = action.payload.token;
         state.isLoggedIn = true;
+
+        switch (decodedToken.role) {
+          case "ADMIN":
+            action.payload.router.push("/admin/dashboard");
+            break;
+          case "USER":
+            action.payload.router.push("/user/dashboard");
+            break;
+          default:
+            action.payload.router.push("/login");
+            break;
+        }
       }
     },
-    logout(state) {
+    logout(state,action) {
       localStorage.removeItem("user");
       state.name = "";
       state.email = "";
       state.role = "";
       state.token = "";
       state.isLoggedIn = false;
+      action.payload.router.push("/login");
+
     },
   },
 });

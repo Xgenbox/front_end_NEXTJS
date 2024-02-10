@@ -24,6 +24,10 @@ export const ApiConfigs = {
     },
     bin: {
       getAllBinsNotInPointBins: "bin/FetchBinsNotInPointBins",
+      getAllBins:"bin/FetchAllBins",
+      store:"bin/createBin",
+      remove:"bin/deleteBinById/{id}",
+      update:"bin/updateBin/{id}"
     },
     score: {
       getScore: "score/findScore",
@@ -39,7 +43,8 @@ export const ApiConfigs = {
     user:{
       getCurrentAccessList:"users/access/getCurrentAccessList",
       addAccessCode:"users/access/addAccess",
-      getAllUsersWithSameBinAccessCode:"users/access/getAllUserWhoHasASameAccessBin"
+      getAllUsersWithSameBinAccessCode:"users/access/getAllUserWhoHasASameAccessBin",
+      getAllUsers:"users/getUsers"
     }
   },
 };

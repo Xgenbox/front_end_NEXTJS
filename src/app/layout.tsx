@@ -20,6 +20,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { refreshAuthentication } from "@/utils/methods/auth";
 import { usePathname, useRouter } from "next/navigation";
+import 'react-loading-skeleton/dist/skeleton.css'
+
 
 export const MyApp = ({ children }: { children: React.ReactNode }) => {
   const theme = ThemeSettings();

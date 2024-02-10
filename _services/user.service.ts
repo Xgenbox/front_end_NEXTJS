@@ -3,7 +3,8 @@ import { authHeader, ApiConfigs } from "../_helpers";
 export const UserService = {
   getCurrentAccessList,
   addAccessCode,
-  getAllUsersWithSameBinAccessCode
+  getAllUsersWithSameBinAccessCode,
+  getAllUsers,
 };
 
 async function getCurrentAccessList() {
@@ -36,6 +37,17 @@ async function addAccessCode(data) {
   };
   return await fetch(
     ApiConfigs.base_url + ApiConfigs.apis.user.addAccessCode,
+    requestOptions
+  ).then(handleResponse);
+}
+
+async function getAllUsers() {
+  const requestOptions = {
+    method: "GET",
+    headers: { ...authHeader(), "Content-Type": "application/json" },
+  };
+  return await fetch(
+    ApiConfigs.base_url + ApiConfigs.apis.user.getAllUsers,
     requestOptions
   ).then(handleResponse);
 }
