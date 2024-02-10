@@ -33,7 +33,7 @@ const ErrorBoundary = ({
           }}
         />
         <Typography align="center" variant="h1" mb={4}>
-          Opps!!!
+          Opps!!
         </Typography>
         <Typography align="center" variant="h4" mb={4}>
           {error.message}

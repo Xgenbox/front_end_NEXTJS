@@ -18,6 +18,7 @@ const PageWrapper = styled("div")(() => ({
   flexDirection: "column",
   zIndex: 1,
   backgroundColor: "transparent",
+
 }));
 
 
@@ -25,6 +26,7 @@ export default function UserDashboardLayout({
   children,
 }: {
   children: React.ReactNode;
+
 }) {
 
   const customizer = useSelector((state: AppState) => state.customizer);
@@ -34,7 +36,7 @@ export default function UserDashboardLayout({
     display: "flex",
     minHeight: "100vh",
     width: "100%",
-    padding: customizer.isHorizontal ? 0 : "20px",
+    padding: customizer.isHorizontal ? 0 : "20px",  
     // backgroundColor: (theme) =>
     //   theme.palette.mode === "dark" ? "#212946" : theme.palette.grey[200]
   }));
