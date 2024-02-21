@@ -1,4 +1,3 @@
-import TechnicalAssistance from '../src/app/(WebsiteLayout)/(pages)/technical-assistance/page';
 function server() {
   return process.env.NEXT_PUBLIC_API_URL ?? "https://xgen.onrender.com/api/";
 }
