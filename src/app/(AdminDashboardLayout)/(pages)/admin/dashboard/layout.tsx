@@ -5,57 +5,47 @@ import { BinPointService } from "@services/binPoint.service";
 import { UserService } from "@services/user.service";
 
 export default function AdminDashboardLayout({ children }) {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [binsData, setBinsData] = useState([]);
   const [usersData, setUsersData] = useState([]);
 
+  // Adjusted to immediately return the promise from the service call
   const getAllBinPoints = () => {
-    setIsLoading(true);
-
-    BinPointService.getAllBinPoints()
+    return BinPointService.getAllBinPoints()
       .then((res) => {
         setBinsData(res.pointBins);
       })
-      .catch((err) => console.log(err))
-      .finally(() => {
-        setIsLoading(false);
-      });
+      .catch((err) => console.log(err));
   };
 
+  // Adjusted to immediately return the promise from the service call
   const getAllUsers = () => {
-    setIsLoading(true);
-
-    UserService.getAllUsers()
+    return UserService.getAllUsers()
       .then((res) => {
         setUsersData(res);
       })
-      .catch((err) => console.log(err))
-      .finally(() => {
-        setIsLoading(false);
-      });
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
     setIsLoading(true);
     Promise.all([getAllBinPoints(), getAllUsers()])
-      .then(() => {})
+      .then(() => {
+        // Data fetching is complete, so we can set isLoading to false
+      })
       .catch((err) => console.log(err))
       .finally(() => setIsLoading(false));
   }, []);
 
-  // Hypothetical memoization example:
-  const _processedBinsData = useMemo(() => {
-    // Imagine this is a heavy computation
-    return binsData.map((bin: any) => ({ ...bin, processed: true }));
-  }, [binsData]);
-
-  const _processedUsersData = useMemo(() => {
-    // Another heavy computation
-    return usersData.map((user: any) => ({ ...user, processed: true }));
-  }, [usersData]);
-
-  // Now you would use processedBinsData and processedUsersData in your render logic
-  // For this example, the actual usage remains unchanged because we don't have a specific use case for the processed data.
+  // Memoization examples remain unchanged
+  const processedBinsData = useMemo(
+    () => binsData.map((bin: any) => ({ ...bin, processed: true })),
+    [binsData]
+  );
+  const processedUsersData = useMemo(
+    () => usersData.map((user: any) => ({ ...user, processed: true })),
+    [usersData]
+  );
 
   return (
     <>
@@ -63,16 +53,20 @@ export default function AdminDashboardLayout({ children }) {
         <StatsCard
           icon="solar:trash-bin-2-line-duotone"
           title="Bins count"
-          value={binsData.length} // Example usage if you were displaying counts
+          value={isLoading ? null : processedBinsData.length} // Displays counts or loading
           isLoading={isLoading}
         />
         <StatsCard
           icon="solar:users-group-two-rounded-broken"
           title="Users count"
-          value={usersData.length} // Another example usage
+          value={isLoading ? null : processedUsersData.length} // Displays counts or loading
           isLoading={isLoading}
         />
-        <StatsCard icon="heroicons:truck" title="Urban count" value={0} />
+        <StatsCard
+          icon="heroicons:truck"
+          title="Urban count"
+          value={4} // Example, possibly update similarly based on actual data
+        />
       </div>
       {children}
     </>

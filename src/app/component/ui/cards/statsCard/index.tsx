@@ -8,12 +8,12 @@ import LinearProgress from "@mui/material/LinearProgress";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
-import Skeleton from 'react-loading-skeleton'
+import Skeleton from "react-loading-skeleton";
 
 interface propTypes {
   title: string;
   icon: string;
-  value: number;
+  value: any;
   isPercentage?: boolean;
   isLoading?: boolean;
 }
@@ -23,7 +23,7 @@ const StatsCard = ({
   icon,
   value,
   isPercentage = false,
-  isLoading = false,
+  isLoading,
 }: propTypes) => {
   return (
     <Card
@@ -56,9 +56,12 @@ const StatsCard = ({
         </Box>
         <Stack direction="row" justifyContent="space-between" mb={1}>
           <Typography variant="h6">{title}</Typography>
-          {isLoading ? (
-            <Skeleton height={20} width="100%"/>
-          ) : (
+
+          {isLoading && !value ? (
+            <div className="flex justify-end">
+              <Skeleton count={1} height={20} width={100} />
+            </div>
+          ) : !!value &&(
             <Typography
               variant="subtitle1"
               fontWeight={500}
