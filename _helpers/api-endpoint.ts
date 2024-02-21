@@ -1,3 +1,4 @@
+import TechnicalAssistance from '../src/app/(WebsiteLayout)/(pages)/technical-assistance/page';
 function server() {
   return process.env.NEXT_PUBLIC_API_URL ?? "https://xgen.onrender.com/api/";
 }
@@ -21,6 +22,7 @@ export const ApiConfigs = {
     },
     binPoint: {
       getAll: "Pointbin/fetchAllPointBin",
+      getAllBinPoints:"bin/fetchAllPointBins"
     },
     bin: {
       getAllBinsNotInPointBins: "bin/FetchBinsNotInPointBins",
@@ -45,6 +47,18 @@ export const ApiConfigs = {
       addAccessCode:"users/access/addAccess",
       getAllUsersWithSameBinAccessCode:"users/access/getAllUserWhoHasASameAccessBin",
       getAllUsers:"users/getUsers"
+    },
+    municipalRequests:{
+      getAll:"demande-municipal/findDemandeInProgress",
+    },
+    quoteRequests:{
+      getAll:"site/quote/fetchAll"
+    },
+    TechnicalAssistance:{
+      getAll:"site/TechAssist/fetchAll",
+    },
+    contactRequests:{
+      getAll:"site/contactUs/fetchAll",
     }
   },
 };

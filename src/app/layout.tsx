@@ -23,6 +23,7 @@ import { usePathname, useRouter } from "next/navigation";
 import 'react-loading-skeleton/dist/skeleton.css'
 
 
+
 export const MyApp = ({ children }: { children: React.ReactNode }) => {
   const theme = ThemeSettings();
 

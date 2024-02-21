@@ -1,8 +1,7 @@
 import { authHeader, ApiConfigs } from "../_helpers";
 
-export const BinPointService = {
+export const ContactRequestsService = {
   getAll,
-  getAllBinPoints
 };
 
 async function getAll() {
@@ -11,20 +10,11 @@ async function getAll() {
     headers: { ...authHeader(), "Content-Type": "application/json" },
   };
   return await fetch(
-    ApiConfigs.base_url + ApiConfigs.apis.binPoint.getAll,
+    ApiConfigs.base_url + ApiConfigs.apis.contactRequests.getAll,
     requestOptions
   ).then(handleResponse);
 }
-async function getAllBinPoints() {
-  const requestOptions = {
-    method: "GET",
-    headers: { ...authHeader(), "Content-Type": "application/json" },
-  };
-  return await fetch(
-    ApiConfigs.base_url + ApiConfigs.apis.binPoint.getAllBinPoints,
-    requestOptions
-  ).then(handleResponse);
-}
+
 
 function handleResponse(response) {
   return response.text().then((text) => {

@@ -7,7 +7,6 @@ import MapLoader from "@/app/component/ui/loaders/mapLoader";
 import { binsIsFilled } from "@/utils/methods/bins";
 import CustomCircularProgress from "@/app/component/ui/progress";
 
-
 // my location marker
 const myLocationIcon = new L.Icon({
   iconUrl: "/images/markers/my-location-marker.png",
@@ -54,6 +53,7 @@ export default function AdminDashboardMap({ binsPointsData, isBinsLoading }) {
   };
   useEffect(() => {
     getCurrentLocation();
+
   }, []);
 
   return (

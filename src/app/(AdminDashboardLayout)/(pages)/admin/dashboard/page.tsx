@@ -5,11 +5,11 @@ import { BinPointService } from "@services/binPoint.service";
 import { useEffect, useState } from "react";
 import CustomTabs from "@/app/component/ui/tabs";
 import CustomTable from "@/app/component/ui/customTable";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
 const AdminDashboardMap = dynamic(
-    () => import('@/app/(AdminDashboardLayout)/components/pages/dashboard/map'),
-    { ssr: false }
+  () => import("@/app/(AdminDashboardLayout)/components/pages/dashboard/map"),
+  { ssr: false }
 );
 
 //tabs headers
@@ -68,7 +68,7 @@ const HomeUserDashboard = () => {
             content={[
               (key) => (
                 <AdminDashboardMap
-                  key={key}
+                  key={`map-${key}-${binsPointsData.length}`}
                   binsPointsData={binsPointsData}
                   isBinsLoading={isBinsLoading}
                 />
