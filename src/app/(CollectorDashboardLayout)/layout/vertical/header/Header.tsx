@@ -68,9 +68,9 @@ const Header = () => {
         <Box flexGrow={1} />
         <Stack spacing={2} direction="row" alignItems="center">
 
-          <Language />
+          {/* <Language />
    
-          <Notifications />
+          <Notifications /> */}
           <Profile />
         </Stack>
       </ToolbarStyled>

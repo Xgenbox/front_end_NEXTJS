@@ -103,7 +103,7 @@ const Profile = () => {
           <Typography variant="h5">Profile</Typography>
           <Stack direction="row" py={3} spacing={2} alignItems="center">
             <Avatar
-              src={"/images/profile/user.png"}
+              src={"/images/profile/admin.png"}
               alt={"ProfileImg"}
               sx={{ width: 95, height: 95 }}
             />

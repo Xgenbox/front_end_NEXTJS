@@ -2,7 +2,7 @@
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import { styled, useTheme } from "@mui/material/styles";
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import Header from "./layout/vertical/header/Header";
 import Sidebar from "./layout/vertical/sidebar/Sidebar";
 import Customizer from "./layout/shared/customizer/Customizer";
@@ -10,6 +10,7 @@ import Navigation from "./layout/horizontal/navbar/Navigation";
 import HorizontalHeader from "./layout/horizontal/header/Header";
 import { useSelector } from "@/store/hooks";
 import { AppState } from "@/store/store";
+import { useRouter } from "next/navigation";
 
 const PageWrapper = styled("div")(() => ({
   display: "flex",
@@ -18,38 +19,44 @@ const PageWrapper = styled("div")(() => ({
   flexDirection: "column",
   zIndex: 1,
   backgroundColor: "transparent",
-
 }));
 
-
-export default function UserDashboardLayout({
+export default function CollectorDashboardLayout({
   children,
 }: {
   children: React.ReactNode;
-
 }) {
-
   const customizer = useSelector((state: AppState) => state.customizer);
   const theme = useTheme();
+
+  const auth = useSelector((state) => state.auth);
+  //*router hook
+  const router = useRouter();
+
+  //*auth protect routes
+  useLayoutEffect(() => {
+    if (!auth.isLoggedIn || auth.role !== "COLLECTOR") {
+      router.push("/login");
+    }
+  }, [auth]);
 
   const MainWrapper = styled("div")(() => ({
     display: "flex",
     minHeight: "100vh",
     width: "100%",
-    padding: customizer.isHorizontal ? 0 : "20px",  
+    padding: customizer.isHorizontal ? 0 : "20px",
     // backgroundColor: (theme) =>
     //   theme.palette.mode === "dark" ? "#212946" : theme.palette.grey[200]
   }));
 
   return (
     <MainWrapper>
+      <title>Xgenbox</title>
+
       {/* ------------------------------------------- */}
       {/* Main Wrapper */}
       {/* ------------------------------------------- */}
-      <Box
-        width="100%"
-
-      >
+      <Box width="100%">
         {/* PageContent */}
 
         {/* ------------------------------------------- */}
@@ -76,12 +83,7 @@ export default function UserDashboardLayout({
               }),
           }}
         >
-          <Container
-            sx={{
-              maxWidth:
-                customizer.isLayout === "boxed" ? "lg" : "100%!important",
-            }}
-          >
+          <Container maxWidth={false}>
             {/* ------------------------------------------- */}
             {/* Header */}
             {/* ------------------------------------------- */}

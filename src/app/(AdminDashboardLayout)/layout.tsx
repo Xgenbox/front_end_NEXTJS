@@ -22,7 +22,7 @@ const PageWrapper = styled("div")(() => ({
 }));
 
 
-export default function UserDashboardLayout({
+export default function AdminDashboardLayout({
   children,
 }: {
   children: React.ReactNode;

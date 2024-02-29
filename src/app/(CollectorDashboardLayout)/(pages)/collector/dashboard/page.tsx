@@ -1,16 +1,95 @@
 "use client";
-import Typography from '@mui/material/Typography';
 import PageContainer from "@/app/(CollectorDashboardLayout)/components/container/PageContainer";
 import DashboardCard from "@/app/(CollectorDashboardLayout)/components/shared/DashboardCard";
+import { BinPointService } from "@services/binPoint.service";
+import { useEffect, useState } from "react";
+import CustomTabs from "@/app/component/ui/tabs";
+import CustomTable from "@/app/component/ui/customTable";
+import dynamic from "next/dynamic";
 
-const SamplePage = () => {
+const CollectorDashboardMap = dynamic(
+  () =>
+    import("@/app/(CollectorDashboardLayout)/components/pages/dashboard/map"),
+  { ssr: false }
+);
+
+//tabs headers
+const tabHeaders: string[] = ["Map", "Bins list"];
+
+//bins list tab table headers
+const binsListTableHeaders: string[] = [
+  "Id",
+  "Name",
+  "Address",
+  "Gaz",
+  "Level",
+];
+
+const HomeCollectorDashboard = () => {
+  const [binsPointsData, setBinsPointsData] = useState<any[]>([]);
+  const [isBinsLoading, setIsBinsLoading] = useState(false);
+
+  //get all bins points data
+  const getAllBinPoints = () => {
+    setIsBinsLoading(true);
+    BinPointService.getAll()
+      .then((res) => {
+        setBinsPointsData(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setIsBinsLoading(false);
+      });
+  };
+  useEffect(() => {
+    getAllBinPoints();
+  }, []);
+
+  const binsListRowsData = binsPointsData
+    .map((binPoint) => binPoint.bins)
+    .flat()
+    .map((bin) => ({
+      id: bin._id,
+      name: bin.name,
+      address: bin.address,
+      topicGaz: bin.topicGaz,
+      niv: bin.niv + "%",
+    }));
+
+  const binsListData = binsPointsData.map((binPoint) => binPoint.bins).flat();
+
   return (
-    <PageContainer title="Sample Page" description="this is Sample page">
-      <DashboardCard title="Sample Page">
-        <Typography>This is a sample2 page</Typography>
+    <PageContainer>
+      <DashboardCard title="Nearby smart bins">
+        <>
+          <CustomTabs
+            headers={tabHeaders}
+            content={[
+              (key) => (
+                <CollectorDashboardMap
+                  key={`map-${key}-${binsPointsData.length}`}
+                  binsPointsData={binsPointsData}
+                  isBinsLoading={isBinsLoading}
+                />
+              ),
+              (key) => (
+                <CustomTable
+                  key={key}
+                  data={binsListData}
+                  rows={binsListRowsData}
+                  isLoading={isBinsLoading}
+                  headers={binsListTableHeaders}
+                  isCSV={true}
+                />
+              ),
+            ]}
+          />
+        </>
       </DashboardCard>
     </PageContainer>
   );
 };
 
-export default SamplePage;
+export default HomeCollectorDashboard;

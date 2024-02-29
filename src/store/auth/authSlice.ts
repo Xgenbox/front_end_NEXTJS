@@ -53,6 +53,9 @@ const authSlice = createSlice({
           case "USER":
             action.payload.router.push("/user/dashboard");
             break;
+          case "COLLECTOR":
+            action.payload.router.push("/collector/dashboard");
+            break;
           default:
             action.payload.router.push("/login");
             break;

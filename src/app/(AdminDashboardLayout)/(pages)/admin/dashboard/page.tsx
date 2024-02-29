@@ -1,6 +1,6 @@
 "use client";
-import PageContainer from "@/app/(UserDashboardLayout)/components/container/PageContainer";
-import DashboardCard from "@/app/(UserDashboardLayout)/components/shared/DashboardCard";
+import PageContainer from "@/app/(AdminDashboardLayout)/components/container/PageContainer";
+import DashboardCard from "@/app/(AdminDashboardLayout)/components/shared/DashboardCard";
 import { BinPointService } from "@services/binPoint.service";
 import { useEffect, useState } from "react";
 import CustomTabs from "@/app/component/ui/tabs";
@@ -24,7 +24,7 @@ const binsListTableHeaders: string[] = [
   "Level",
 ];
 
-const HomeUserDashboard = () => {
+const HomeAdminDashboard = () => {
   const [binsPointsData, setBinsPointsData] = useState<any[]>([]);
   const [isBinsLoading, setIsBinsLoading] = useState(false);
 
@@ -91,4 +91,4 @@ const HomeUserDashboard = () => {
   );
 };
 
-export default HomeUserDashboard;
+export default HomeAdminDashboard;
