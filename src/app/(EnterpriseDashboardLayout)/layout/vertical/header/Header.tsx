@@ -11,9 +11,9 @@ import {
   toggleMobileSidebar,
 } from "@/store/customizer/CustomizerSlice";
 import { Icon } from "@iconify/react";
-import Notifications from "./Notification";
+// import Notifications from "./Notification";
 import Profile from "./Profile";
-import Language from "./Language";
+// import Language from "./Language";
 import { AppState } from "@/store/store";
 import { shadows } from "@/utils/theme/Shadows";
 import React from "react";
@@ -25,6 +25,8 @@ const Header = () => {
   // drawer
   const customizer = useSelector((state: AppState) => state.customizer);
   const dispatch = useDispatch();
+
+
 
   const AppBarStyled = styled(AppBar)(({ theme }) => ({
     boxShadow: shadows[9],
@@ -67,9 +69,9 @@ const Header = () => {
         </Stack>
         <Box flexGrow={1} />
         <Stack spacing={2} direction="row" alignItems="center">
-          <Language />
+          {/* <Language />
    
-          <Notifications />
+          <Notifications /> */}
           <Profile />
         </Stack>
       </ToolbarStyled>
