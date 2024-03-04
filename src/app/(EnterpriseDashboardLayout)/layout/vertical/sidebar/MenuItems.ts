@@ -51,13 +51,6 @@ const Menuitems: MenuitemsType[] = [
   },
   {
     id: uniqueId(),
-    title: "Medicine",
-    icon: 'box-minimalistic-linear',
-    href: "/enterprise/dashboard/medicine",
-    bgcolor: "primary",
-  },
-  {
-    id: uniqueId(),
     title: "Scan QR code",
     icon: 'qr-code-linear',
     href: "/enterprise/dashboard/qr-code",
