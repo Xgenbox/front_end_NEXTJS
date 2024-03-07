@@ -9,7 +9,7 @@ const SpecificRequestEnterpriseDashboardPage = () => {
     <>
       <PageContainer>
         <DashboardCard title="Specific Request">
-          <QuoteRequestForm />
+          <QuoteRequestForm dashboard={true}/>
         </DashboardCard>
       </PageContainer>
     </>

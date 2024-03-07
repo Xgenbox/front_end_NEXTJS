@@ -16,6 +16,7 @@ import { IconMenu2 } from "@tabler/icons-react";
 import LoginTwoToneIcon from "@mui/icons-material/LoginTwoTone";
 import Link from "next/link";
 import RegisterTypeDialog from "../../../ui/dialog/auth/registerType";
+import { useSelector } from "@/store/hooks";
 const LpHeader = () => {
   const AppBarStyled = styled(AppBar)(({ theme }) => ({
     justifyContent: "center",
@@ -36,7 +37,7 @@ const LpHeader = () => {
   //   sidebar
   const lgUp = useMediaQuery((theme: Theme) => theme.breakpoints.up("lg"));
   const lgDown = useMediaQuery((theme: Theme) => theme.breakpoints.down("lg"));
-
+  const auth = useSelector((state) => state.auth);
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -86,7 +87,7 @@ const LpHeader = () => {
               <IconMenu2 size="20" />
             </IconButton>
           ) : null}
-          {lgUp ? (
+          {lgUp ?auth.isLoggedIn?<>hello</>: (
             <>
               <Stack spacing={1} direction="row" alignItems="center" gap={1}>
                 <Navigations />

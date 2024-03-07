@@ -4,7 +4,7 @@ import CustomTable from "@/app/component/ui/customTable";
 import { useEffect, useState } from "react";
 import PageContainer from "@/app/(AdminDashboardLayout)/components/container/PageContainer";
 import DashboardCard from "@/app/(AdminDashboardLayout)/components/shared/DashboardCard";
-import { QuoteRequestsService } from "@services/quoteResquests";
+import { QuoteRequestsService } from "@services/quoteResquests.service";
 
 const headers: string[] = [
   "User",

@@ -20,7 +20,7 @@ import { FormControl, Typography } from "@mui/material";
 import CustomRadio from "@/app/(WebsiteLayout)/components/forms/theme-elements/CustomRadio";
 import CustomFileInput from "../../../forms/theme-elements/CustomFileInput";
 
-export default function QuoteRequestForm() {
+export default function QuoteRequestForm({ dashboard = false }) {
   const [age, setAge] = React.useState("1");
 
   const handleChange = (event: any) => {
@@ -46,60 +46,64 @@ export default function QuoteRequestForm() {
       sx={{
         backgroundColor: (theme) => theme.palette.background.paper,
       }}
-      pt={12}
+      pt={dashboard ? 0 : 12}
+      pb={dashboard ?  12: 0}
       px={{ lg: 8, xs: 0 }}
-      
     >
-      <Typography
-        variant="h2"
-        fontWeight={700}
-        textAlign="center"
-        mb={1}
-        sx={{
-          fontSize: {
-            lg: "36px",
-            xs: "25px",
-          },
-          lineHeight: {
-            lg: "43px",
-            xs: "30px",
-          },
-        }}
-      >
-        Quote request
-      </Typography>
-      <Typography
-        textAlign="center"
-        mb={1}
-        sx={{
-          fontSize: {
-            lg: "16px",
-            xs: "13px",
-          },
-        }}
-      >
-        This form allows our customers to request a personalized quote for the
-        products and services offered by XGENBOX. Please provide as much
-        information as possible, including your specific requirements,
-        quantities needed and your company details, so that our sales team can
-        provide you with an accurate quote.
-      </Typography>
-      <Typography
-        textAlign="center"
-        mb={8}
-        sx={{
-          fontSize: {
-            lg: "16px",
-            xs: "13px",
-          },
-        }}
-      >
-        Once you have completed the form, click submit to send your request. We
-        will answer you as soon as possible with a proposal adapted to your
-        needs.
-      </Typography>
+      {!dashboard && (
+        <>
+          <Typography
+            variant="h2"
+            fontWeight={700}
+            textAlign="center"
+            mb={1}
+            sx={{
+              fontSize: {
+                lg: "36px",
+                xs: "25px",
+              },
+              lineHeight: {
+                lg: "43px",
+                xs: "30px",
+              },
+            }}
+          >
+            Quote request
+          </Typography>
+          <Typography
+            textAlign="center"
+            mb={1}
+            sx={{
+              fontSize: {
+                lg: "16px",
+                xs: "13px",
+              },
+            }}
+          >
+            This form allows our customers to request a personalized quote for
+            the products and services offered by XGENBOX. Please provide as much
+            information as possible, including your specific requirements,
+            quantities needed and your company details, so that our sales team
+            can provide you with an accurate quote.
+          </Typography>
+          <Typography
+            textAlign="center"
+            mb={8}
+            sx={{
+              fontSize: {
+                lg: "16px",
+                xs: "13px",
+              },
+            }}
+          >
+            Once you have completed the form, click submit to send your request.
+            We will answer you as soon as possible with a proposal adapted to
+            your needs.
+          </Typography>
+        </>
+      )}
       <PageContainer>
-        <ParentCard title="Quote request">
+        <ParentCard title={dashboard ? "" : "Quote request"}>
           <>
             <Grid container spacing={3}>
               <Grid item xs={12} sm={12} lg={4}>
@@ -472,51 +476,48 @@ export default function QuoteRequestForm() {
               {/* ----------------------------------- */}
               <Grid item xs={12} sm={12} lg={12}>
                 <Typography variant="h3" fontSize={25}>
-                Optional features
-
+                  Optional features
                 </Typography>
                 <Grid container spacing={3}>
                   <Grid item xs={12} sm={12} lg={4}>
                     <CustomFormLabel htmlFor="demo-simple-select">
-                    Graphic wraps
+                      Graphic wraps
                     </CustomFormLabel>
                     <CustomFileInput />
                   </Grid>
                   <Grid item xs={12} sm={12} lg={4}>
                     <CustomFormLabel htmlFor="demo-simple-select">
-                    Advertisement signage
-
+                      Advertisement signage
                     </CustomFormLabel>
                     <CustomFileInput />
                   </Grid>
                   <Grid item xs={12} sm={12} lg={4}>
-               
                     <Grid container>
-                        <Grid item xs={12} sm={4} lg={4}>
-                          <FormControl component="fieldset">
-                            <FormControlLabel
-                              control={<CustomCheckbox />}
-                              label="WI-FI router"
-                            />
-                          </FormControl>
-                        </Grid>
-                        <Grid item xs={12} sm={4} lg={12}>
-                          <FormControl component="fieldset">
-                            <FormControlLabel
-                              control={<CustomCheckbox />}
-                              label="Mounting bracket"
-                            />
-                          </FormControl>
-                        </Grid>
-                        <Grid item xs={12} sm={4} lg={12}>
-                          <FormControl component="fieldset">
-                            <FormControlLabel
-                              control={<CustomCheckbox />}
-                              label="Ashtray"
-                            />
-                          </FormControl>
-                        </Grid>
+                      <Grid item xs={12} sm={4} lg={4}>
+                        <FormControl component="fieldset">
+                          <FormControlLabel
+                            control={<CustomCheckbox />}
+                            label="WI-FI router"
+                          />
+                        </FormControl>
                       </Grid>
+                      <Grid item xs={12} sm={4} lg={12}>
+                        <FormControl component="fieldset">
+                          <FormControlLabel
+                            control={<CustomCheckbox />}
+                            label="Mounting bracket"
+                          />
+                        </FormControl>
+                      </Grid>
+                      <Grid item xs={12} sm={4} lg={12}>
+                        <FormControl component="fieldset">
+                          <FormControlLabel
+                            control={<CustomCheckbox />}
+                            label="Ashtray"
+                          />
+                        </FormControl>
+                      </Grid>
+                    </Grid>
                   </Grid>
                 </Grid>
               </Grid>

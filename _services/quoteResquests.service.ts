@@ -2,6 +2,7 @@ import { authHeader, ApiConfigs } from "../_helpers";
 
 export const QuoteRequestsService = {
   getAll,
+  createQuote
 };
 
 async function getAll() {
@@ -15,6 +16,17 @@ async function getAll() {
   ).then(handleResponse);
 }
 
+async function createQuote(formData) {
+  const requestOptions = {
+    method: "POST",
+    headers: { ...authHeader() },
+    body: formData,
+  };
+  return await fetch(
+    ApiConfigs.base_url + ApiConfigs.apis.quoteRequests.createQuote,
+    requestOptions
+  ).then(handleResponse);
+}
 
 function handleResponse(response) {
   return response.text().then((text) => {
