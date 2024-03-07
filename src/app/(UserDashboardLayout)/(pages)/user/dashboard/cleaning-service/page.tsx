@@ -54,7 +54,7 @@ const CleaningServiceUserDashboardPage = () => {
               (closeMenu, singleItemData,key) => {
                 return (
                   <DeleteCleaningServiceDialog
-                  key={key}
+                    key={key}
                     refresh={getCleaningService}
                     closeMenu={closeMenu}
                     singleItemData={singleItemData}

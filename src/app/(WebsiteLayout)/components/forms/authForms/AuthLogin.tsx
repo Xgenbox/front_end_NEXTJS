@@ -54,9 +54,8 @@ const router=useRouter()
       AuthService.login(values)
         .then((res) => {
           if (res.status) {
-            dispatch(authActions.login(res.token));
+            dispatch(authActions.login({token:res.token,router:router}));
             toast("success","logged in successfully")
-            router.push("/user/dashboard")
           }
         })
         .catch((err) => {

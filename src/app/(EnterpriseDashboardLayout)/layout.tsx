@@ -39,6 +39,8 @@ export default function UserDashboardLayout({
 
   return (
     <MainWrapper>
+      <title>Xgenbox</title>
+
       {/* ------------------------------------------- */}
       {/* Main Wrapper */}
       {/* ------------------------------------------- */}
@@ -69,12 +71,7 @@ export default function UserDashboardLayout({
               }),
           }}
         >
-          <Container
-            sx={{
-              maxWidth:
-                customizer.isLayout === "boxed" ? "lg" : "100%!important",
-            }}
-          >
+          <Container maxWidth={false}>
             {/* ------------------------------------------- */}
             {/* Header */}
             {/* ------------------------------------------- */}

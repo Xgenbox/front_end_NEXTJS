@@ -119,7 +119,7 @@ const AddCleaningServiceDialog = ({refresh}) => {
             ?.municipalities[selectedMunicipalIndex],
         ...(selectedFile !== null && { image: selectedFile }),
       })
-        .then(() => {
+        .then((_) => {
           refresh()
           toast(
             "success",

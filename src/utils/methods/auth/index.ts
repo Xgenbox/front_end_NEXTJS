@@ -8,11 +8,10 @@ export const refreshAuthentication = (
   let userJSON: any = localStorage.getItem("user");
   let user: any = JSON.parse(userJSON);
   if (user && user.token) {
-    dispatch(authActions.login(user.token));
+    dispatch(authActions.login({ token: user.token, router: router }));
   } else {
     if (pathname.includes("/dashboard")) {
-      dispatch(authActions.logout());
-      router.push("/login");
+      dispatch(authActions.logout({ router }));
     }
   }
 };

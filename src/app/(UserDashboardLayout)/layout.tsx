@@ -26,7 +26,11 @@ export default function UserDashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const customizer = useSelector((state: AppState) => state.customizer);
+  const theme = useTheme();
+
   const auth = useSelector((state) => state.auth);
+  
   //*router hook
   const router = useRouter();
 
@@ -37,8 +41,6 @@ export default function UserDashboardLayout({
     }
   }, [auth]);
 
-  const customizer = useSelector((state: AppState) => state.customizer);
-  const theme = useTheme();
 
   const MainWrapper = styled("div")(() => ({
     display: "flex",

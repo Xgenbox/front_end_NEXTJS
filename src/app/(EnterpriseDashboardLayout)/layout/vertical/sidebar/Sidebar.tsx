@@ -1,11 +1,11 @@
-import Avatar from '@mui/material/Avatar';
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
+import Avatar from "@mui/material/Avatar";
+import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 import SidebarItems from "./SidebarItems";
 import Logo from "../../shared/logo/Logo";
 import { useSelector, useDispatch } from "@/store/hooks";
@@ -20,6 +20,7 @@ import { Icon } from "@iconify/react";
 export default function Sidebar() {
   const lgUp = useMediaQuery((theme: any) => theme.breakpoints.up("lg"));
   const customizer = useSelector((state: AppState) => state.customizer);
+  const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const theme = useTheme();
   const toggleWidth =
@@ -112,16 +113,21 @@ export default function Sidebar() {
                 >
                   <Box display="flex" alignItems="center">
                     <Avatar
-                      src={"/images/profile/user5.jpg"}
+                      src={"/images/profile/enterprise.png"}
                       sx={{ width: 45, height: 45 }}
                     />
                     <Box ml={2}>
-                      <Typography variant="h5">Mike</Typography>
-                      <Typography variant="subtitle1">Admin</Typography>
+                      <Typography variant="h5" fontSize={14} width={100}>
+                        {auth.name}
+                      </Typography>
+                      <Typography variant="subtitle1" fontSize={13}>
+                        {auth.role}
+                      </Typography>
                     </Box>
                   </Box>
-                  <IconButton color="primary" href="/auth/auth1/login">
+                  <IconButton color="primary">
                     <Icon
+                      className="absolute right-2"
                       icon="solar:logout-line-duotone"
                       width={24}
                       height={24}

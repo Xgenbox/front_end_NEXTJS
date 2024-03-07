@@ -21,25 +21,45 @@ export const ApiConfigs = {
     },
     binPoint: {
       getAll: "Pointbin/fetchAllPointBin",
+      getAllBinPoints: "bin/fetchAllPointBins",
     },
     bin: {
       getAllBinsNotInPointBins: "bin/FetchBinsNotInPointBins",
+      getAllBins: "bin/FetchAllBins",
+      store: "bin/createBin",
+      remove: "bin/deleteBinById/{id}",
+      update: "bin/updateBin/{id}",
     },
     score: {
       getScore: "score/findScore",
     },
-    cleaningService:{
+    cleaningService: {
       getCleaningService: "cleaning/findSingleCleaningService",
-      store:"cleaning",
-      remove:"cleaning/delete/{id}"
+      store: "cleaning",
+      remove: "cleaning/delete/{id}",
     },
-    governorates:{
+    governorates: {
       getGovernorates: "governorates",
     },
-    user:{
-      getCurrentAccessList:"users/access/getCurrentAccessList",
-      addAccessCode:"users/access/addAccess",
-      getAllUsersWithSameBinAccessCode:"users/access/getAllUserWhoHasASameAccessBin"
-    }
+    user: {
+      getCurrentAccessList: "users/access/getCurrentAccessList",
+      addAccessCode: "users/access/addAccess",
+      getAllUsersWithSameBinAccessCode:
+        "users/access/getAllUserWhoHasASameAccessBin",
+      getAllUsers: "users/getUsers",
+    },
+    municipalRequests: {
+      getAll: "demande-municipal/findDemandeInProgress",
+    },
+    quoteRequests: {
+      getAll: "site/quote/fetchAll",
+      createQuote: "site/createQuote",
+    },
+    TechnicalAssistance: {
+      getAll: "site/TechAssist/fetchAll",
+    },
+    contactRequests: {
+      getAll: "site/contactUs/fetchAll",
+    },
   },
 };

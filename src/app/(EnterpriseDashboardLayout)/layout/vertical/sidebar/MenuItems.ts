@@ -26,101 +26,35 @@ const Menuitems: MenuitemsType[] = [
 
   {
     id: uniqueId(),
-    title: "Sample Page",
+    title: "Dashboard",
     icon: 'screencast-2-line-duotone',
-    href: "/",
+    href: "/enterprise/dashboard",
     bgcolor: "primary",
   },
   {
     navlabel: true,
-    subheader: "Other",
+    subheader: "services",
   },
   {
     id: uniqueId(),
-    title: "Menu Level",
-    icon: 'double-alt-arrow-down-bold-duotone',
-    href: "/menulevel/",
+    title: "Specific request",
+    icon: 'chat-round-call-linear',
+    href: "/enterprise/dashboard/specific-request",
     bgcolor: "primary",
-    children: [
-      {
-        id: uniqueId(),
-        title: "Level 1",
-        href: "/l1",
-      },
-      {
-        id: uniqueId(),
-        title: "Level 1.1",
-        href: "/l1.1",
-        children: [
-          {
-            id: uniqueId(),
-            title: "Level 2",
-            href: "/l2",
-          },
-          {
-            id: uniqueId(),
-            title: "Level 2.1",
-            href: "/l2.1",
-            children: [
-              {
-                id: uniqueId(),
-                title: "Level 3",
-                href: "/l3",
-              },
-              {
-                id: uniqueId(),
-                title: "Level 3.1",
-                href: "/l3.1",
-              },
-            ],
-          },
-        ],
-      },
-    ],
   },
   {
     id: uniqueId(),
-    title: "Disabled",
-    icon: 'forbidden-circle-line-duotone',
-    bgcolor: "secondary",
-    href: "",
-    disabled: true,
-  },
-  {
-    id: uniqueId(),
-    title: "SubCaption",
-    subtitle: "This is the sutitle",
-    icon: 'square-academic-cap-line-duotone',
-    bgcolor: "warning",
-    href: "",
-  },
-
-  {
-    id: uniqueId(),
-    title: "Chip",
-    icon: 'archive-check-line-duotone',
-    bgcolor: "error",
-    href: "",
-    chip: "9",
-    chipColor: "error",
-  },
-  {
-    id: uniqueId(),
-    title: "Outlined",
-    icon: 'smile-circle-line-duotone',
-    bgcolor: "info",
-    href: "",
-    chip: "outline",
-    variant: "outlined",
-    chipColor: "info",
-  },
-  {
-    id: uniqueId(),
-    title: "External Link",
-    external: true,
-    icon: 'link-bold-duotone',
+    title: "Appointment request",
+    icon: 'calendar-linear',
+    href: "/enterprise/dashboard/appointment-request",
     bgcolor: "primary",
-    href: "https://google.com",
+  },
+  {
+    id: uniqueId(),
+    title: "Scan QR code",
+    icon: 'qr-code-linear',
+    href: "/enterprise/dashboard/qr-code",
+    bgcolor: "primary",
   },
 ];
 

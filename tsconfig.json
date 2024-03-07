@@ -28,6 +28,7 @@
       "@services/*": ["./_services/*"],
       "@utils/*": ["./src/utils/*"],
       "@store/*": ["./src/store/*"],
+      "@app/components/*": ["./src/app/components/*"],
       "react": [ "./node_modules/@types/react" ]
     }
   },

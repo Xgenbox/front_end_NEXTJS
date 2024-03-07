@@ -16,7 +16,7 @@ export default function NotFound() {
       textAlign="center"
       justifyContent="center"
     >
-      <Container maxWidth="md">
+      <Container maxWidth="md" sx={{display:"flex" ,justifyContent:"center"}}>
         <Image
           src={"/images/backgrounds/errorimg.svg"}
           alt="404"

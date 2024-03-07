@@ -31,7 +31,7 @@ const DeleteCleaningServiceDialog = ({
   const deleteCleaningService = () => {
     setIsLoading(true);
     CleaningServiceService.remove(singleItemData._id)
-      .then(() => {
+      .then((_) => {
         toast("success", "you have successfully deleted this item");
         refresh();
         handleClose();

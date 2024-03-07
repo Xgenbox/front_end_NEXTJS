@@ -11,7 +11,7 @@ import AuthLogin from "../../components/forms/authForms/AuthLogin";
 import Logo from "@/app/(WebsiteLayout)/layout/shared/logo/Logo";
 import RegisterTypeDialog from "../../components/ui/dialog/auth/registerType";
 
-export default function Login2() {
+export default function LoginPage() {
   return (
     <PageContainer title="Login Page" description="this is Sample page">
       <Box
@@ -116,4 +116,4 @@ export default function Login2() {
   );
 }
 
-Login2.layout = "Blank";
+LoginPage.layout = "Blank";

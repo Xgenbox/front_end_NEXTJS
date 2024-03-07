@@ -116,13 +116,18 @@ export default function Sidebar() {
                       src={"/images/profile/user.png"}
                       sx={{ width: 45, height: 45 }}
                     />
-                    <Box >
-                      <Typography variant="h5" fontSize={14} width={100}>{auth.name}</Typography>
-                      <Typography variant="subtitle1" fontSize={13}>{auth.role}</Typography>
+                    <Box>
+                      <Typography variant="h5" fontSize={14} width={100}>
+                        {auth.name}
+                      </Typography>
+                      <Typography variant="subtitle1" fontSize={13}>
+                        {auth.role}
+                      </Typography>
                     </Box>
                   </Box>
                   <IconButton color="primary">
                     <Icon
+                      className="absolute right-2"
                       icon="solar:logout-line-duotone"
                       width={24}
                       height={24}
