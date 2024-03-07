@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { QrReader } from "react-qr-reader";
 
 const EnterpriseDashboardQrCodeScanner = () => {
-  const [data, setData] = useState("No result");
+  // const [data, setData] = useState("No result");
 
   const qrCodeHandler = (result, error) => {
     if (!!result) {
-      setData((result as any).text);
+      // setData((result as any).text);
     }
 
     if (!!error) {
