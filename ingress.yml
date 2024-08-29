@@ -4,7 +4,7 @@ metadata:
   name: nextjs-ingress
 spec:
   rules:
-  - host: "a5a0-51-222-15-212.ngrok-free.app"
+  - host: "43f5-51-222-15-212.ngrok-free.app"
     http:
       paths:
       - pathType: Prefix
