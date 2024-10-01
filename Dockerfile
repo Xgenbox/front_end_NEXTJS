@@ -4,8 +4,8 @@ WORKDIR /workspace
 
 COPY package.json .
 
-# Use --legacy-peer-deps to resolve dependency issues
-RUN npm install --legacy-peer-deps
+# Install sharp and other dependencies
+RUN npm install --legacy-peer-deps && npm install sharp --legacy-peer-deps
 
 COPY . .
 
