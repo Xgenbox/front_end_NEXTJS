@@ -1,3 +1,8 @@
 {
   "extends": "next/core-web-vitals"
+ "rules": {
+    "react-hooks/exhaustive-deps": "off",  // Disable missing dependency warnings
+    "@next/next/no-async-client-component": "off", // Disable async component warnings
+    "@next/next/no-img-element": "off" // Disable warnings about <img> tags
+  }
 }

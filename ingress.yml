@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nextjs-ingress
+spec:
+  rules:
+  - host: "43f5-51-222-15-212.ngrok-free.app"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: nextjsfront
+            port:
+              number: 80
